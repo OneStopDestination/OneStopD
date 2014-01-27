@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cid:</strong>
+  <%= @problem.cid %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @problem.category %>
+</p>
+
+<p>
+  <strong>Resolved:</strong>
+  <%= @problem.resolved %>
+</p>
+
+<p>
+  <strong>User id posted:</strong>
+  <%= @problem.user_id_posted %>
+</p>
+
+<p>
+  <strong>User id resolved:</strong>
+  <%= @problem.user_id_resolved %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @problem.rating %>
+</p>
+
+<p>
+  <strong>Resolution:</strong>
+  <%= @problem.resolution %>
+</p>
+
+<%= link_to 'Edit', edit_problem_path(@problem) %> |
+<%= link_to 'Back', problems_path %>

@@ -1,0 +1,39 @@
+<h1>Listing problems</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cid</th>
+      <th>Category</th>
+      <th>Resolved</th>
+      <th>User id posted</th>
+      <th>User id resolved</th>
+      <th>Rating</th>
+      <th>Resolution</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @problems.each do |problem| %>
+      <tr>
+        <td><%= problem.cid %></td>
+        <td><%= problem.category %></td>
+        <td><%= problem.resolved %></td>
+        <td><%= problem.user_id_posted %></td>
+        <td><%= problem.user_id_resolved %></td>
+        <td><%= problem.rating %></td>
+        <td><%= problem.resolution %></td>
+        <td><%= link_to 'Show', problem %></td>
+        <td><%= link_to 'Edit', edit_problem_path(problem) %></td>
+        <td><%= link_to 'Destroy', problem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Problem', new_problem_path %>

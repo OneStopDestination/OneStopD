@@ -1,0 +1,53 @@
+<% if signed_in? %>
+    <section style="background-color: cornflowerblue">
+      <div class="logo">
+        <%= image_tag("/assets/logo.png",  :class => "gravatar", :size => 150) %>
+      </div>
+      <div class="title">
+        <h1><span style="font-size:1.8em">OneStopD</span></h1>
+      </div>
+      <div class="welcome">
+        <h1><span style="font-size:0.5em">Welcome <%= @profile.name %></span></h1>
+      </div>
+      <div class="login">
+        <h1><span style="font-size:0.5em"><%= link_to "Sign out", signin_path , :class => "btn btn-large btn-primary" %></span></h1>
+      </div>
+    </section>
+
+
+    <section>
+      <div class="profile-content" style="margin-top: 20px ; margin-left: 20%">
+        <%= gravatar_for @profile, 250%>
+
+        <p><strong>Name&nbsp;:&nbsp;</strong><%= @profile.name %>
+          <span style="font-size:0.5em;margin-left: 25%"><%= link_to "Report a Problem", "#post_form" ,:class => "btn btn-large btn-primary"  %></span>
+
+        </p>
+        <p><strong>Education&nbsp;:&nbsp;</strong><%= @profile.education %></p>
+        <p><strong></br>Constituency&nbsp;:&nbsp;</strong><%= Constituency.find(id=@profile.constituency_id).name %></p>
+        <p><strong></br>State&nbsp;:&nbsp;</strong><%= @profile.constituency_id %></p>
+        <p class="wrapped-text" style="width: 75%;text-align:justify;"><strong></br>About&nbsp;:&nbsp;</strong><%= @profile.about %></p>
+        <p class="wrapped-text" style="width: 75%;text-align:justify;"><strong></br>Manifesto&nbsp;:&nbsp;</strong><%=raw @profile.manifesto %></p>
+        <p class="wrapped-text" style="width: 75%;text-align:justify;"><strong></br>More details&nbsp;:&nbsp;</strong><%= @profile.additional_details.html_safe %></p>
+
+      </div>
+    </section>
+
+    <section class="post_form" id="post_form"  style="margin-left: 20%">
+      <hr>
+      <h3>Report a Problem</h3>
+      <%= render 'problems/form' %>
+    </section>
+
+    <section class="problems_feed" style="margin-left: 20%;margin-right: 20%">
+      <%= render 'shared/problem_feed' %>
+    </section>
+
+<% else %>
+    redirect_to(root_path)
+<% end %>
+
+
+
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<%= link_to 'Back', profiles_path %>

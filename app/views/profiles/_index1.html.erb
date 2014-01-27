@@ -1,0 +1,12 @@
+<h1>Profiles of politicians</h1>
+</br>
+<ul class="profiles">
+<% Profile.all.each do |profile| %>
+     <li>
+        <%= gravatar_for profile, 200%>
+        <%= link_to profile.name, profile %>
+        <p style="display: block"><%= Constituency.find(id=profile.constituency_id).name %></p>
+     </li>
+ <% end %>
+</ul>
+

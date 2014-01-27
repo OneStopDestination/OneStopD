@@ -1,0 +1,43 @@
+<section style="background-color: cornflowerblue">
+  <div class="logo">
+    <%= image_tag("/assets/logo.png",  :class => "gravatar", :size => 150) %>
+  </div>
+  <div class="title">
+    <h1><span style="font-size:1.8em">OneStopD</span></h1>
+  </div>
+
+  <div class="login">
+    <h1><span style="font-size:0.5em"><%= link_to "Sign in now!", signin_path , :class => "btn btn-large btn-primary" %></span></h1>
+
+  </div>
+</section>
+<% provide(:title, "Sign in") %>
+
+
+<section class="center-page offset5 signin" style="margin-top: 100px">
+  <div class=" row offset1 ">
+    <h1 style="margin-bottom: 30px">Sign in</h1>
+    <%= form_for(:session, :url => sessions_path) do |f| %>
+
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+
+        <%= f.submit "Sign in", :class => "btn btn-large btn-primary block" %>
+        <%= link_to "forgotten password?", new_password_reset_path %>
+    <% end %>
+
+    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+
+  </div>
+</section>
+
+<div class="footer">
+  <ul>
+    <li><a href="#">Privacy</a></li>
+    <li><a href="#">Terms of Use</a></li>
+    <li><a href="#">Copyright</a></li>
+  </ul>
+</div>

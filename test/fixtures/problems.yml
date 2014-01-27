@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cid: 1
+  category: MyString
+  resolved: false
+  user_id_posted: 1
+  user_id_resolved: 1
+  rating: 1
+  resolution: MyText
+
+two:
+  cid: 1
+  category: MyString
+  resolved: false
+  user_id_posted: 1
+  user_id_resolved: 1
+  rating: 1
+  resolution: MyText

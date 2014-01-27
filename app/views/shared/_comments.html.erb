@@ -1,0 +1,14 @@
+<div class="comments">
+  <div  id="comments_post_<%= @problem_feed.id%>">
+    <ol>
+      <% @comment_items = @problem_feed.comments %>
+      <%= render :partial => 'shared/comment_item', :collection=> @comment_items %>
+    </ol>
+  </div>
+
+  <% @comment = Comment.new(:problem_id => @problem_feed.id) %>
+  <% @comment.user_id = current_user.id %>
+  <div id="comments_post_form_<%= @problem_feed.id%>">
+    <%= render  :partial => 'comments/form' %>
+  </div>
+</div>

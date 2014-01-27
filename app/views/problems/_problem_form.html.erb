@@ -1,0 +1,8 @@
+<%= form_for(@problem, :remote => true , :html =>{ :method => :put }) do |f| %>
+    <%= render 'shared/error_messages', :object => f.object %>
+    <div class="post_field">
+      <%= f.text_area :description, :placeholder => "Compose new problem..." %>
+    </div>
+    <%= f.hidden_field :user_id_posted, :value => current_user.id %>
+    <%= f.submit "Post", :class => "btn btn-primary" %>
+<% end %>

@@ -1,0 +1,160 @@
+.logo {
+  float:left;
+
+}
+.title {
+  float:left;
+  width: 20%;
+
+}
+.welcome {
+  float:left;
+  margin-left:20%;
+}
+
+.login{
+  float:right;
+  margin-right: 10%;
+}
+.headerr {
+  background-color:red;
+}
+
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.left_bar {
+  width: 20%;
+}
+
+.right_bar {
+  width: 20%;
+  float: right;
+}
+
+.footer {
+  position:relative;
+  bottom:0;
+  width:100%;
+  height:60px;   /* Height of the footer */
+  margin-top: 30px;
+  #background:#6cf;
+  text-align: center;
+ margin-left: 40%;
+
+}
+
+footer a {
+  color: #555;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+.footer ul {
+  float: left;
+  list-style: none;
+  float: left;
+}
+
+.footer ul li {
+  float: left;
+  margin-left: 10px;
+
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+  padding-right: 10px;
+  display: block;
+}
+
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  padding-top: 2px;
+}
+
+section {
+  overflow: auto;
+}
+.block {
+  display: block;
+  height: 40px;
+  margin-top: 20px;
+}
+
+.signin{
+  border:2px solid;
+  border-radius:25px;
+  background-color: gainsboro ;
+  width: 500px
+
+}
+
+.signup {
+  border:2px solid;
+  border-radius:25px;
+  background-color: gainsboro ;
+  width: 500px
+ }
+
+ol, li, ul {
+  list-style: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+textarea {
+  resize: none;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.center {
+  text-align: center;
+}
+
+.feed_content {
+  width: 50%;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.profiles li {
+  width: 200px;
+  display: inline-block;
+  vertical-align: top;
+  padding-right: 30px;
+  padding-bottom: 30px;
+}
+
+.wrapped-text {
+  white-space: pre-wrap;
+}

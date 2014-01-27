@@ -1,0 +1,6 @@
+<h1>Listing profiles</h1>
+<% Profile.all.each do |profile| %>
+    <%= gravatar_for profile, 100 %>
+    <%= link_to profile.name, profile %>
+<% end %>
+

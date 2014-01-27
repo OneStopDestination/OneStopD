@@ -1,0 +1,78 @@
+<title>OneStopD</title>
+<script>
+    $(document).ready(function(){
+        $('.bxslider').bxSlider( {
+            auto: true,
+            autoControls: true,
+            slideWidth:550
+        });
+    });
+
+    $('#slider-next').click(function(){
+        slider.goToNextSlide();
+        return false;
+    });
+
+</script>
+<head>
+  <link href="/twitter-bootstrap/twitter-bootstrap-v2/docs/assets/css/bootstrap2.2.css" rel="stylesheet">
+</head>
+<section style="background-color: cornflowerblue">
+  <div class="logo">
+    <%= image_tag("/assets/logo.png",  :class => "gravatar", :size => 150) %>
+  </div>
+  <div class="title">
+    <h1><span style="font-size:1.8em">OneStopD</span></h1>
+  </div>
+  <div class="welcome">
+    <h1><span style="font-size:0.5em">Welcome User</span></h1>
+  </div>
+  <% if !signed_in? %>
+  <div class="login">
+    <h1><span style="font-size:0.5em"><%= link_to "Sign in now!", signin_path , :class => "btn btn-large btn-primary" %></span></h1>
+  </div>
+  <% else %>
+      <div class="login">
+        <h1><span style="font-size:0.5em"><%= link_to "Sign Out", signout_path , :class => "btn btn-large btn-primary" %></span></h1>
+      </div>
+  <% end  %>
+</section>
+
+<section>
+  <div class="centre-page">
+    <h2 style="text-align: center"> One platform for all your problems</h2>
+  </div>
+</section>
+
+<% if signed_in? %>
+    <div class="container">
+      <div class="row">
+
+        <ul class="nav nav-tabs">
+          <li class="<%= 'active' if request.original_url.to_s =~ /Profiles(.*)/ || current_page?(root_url)    %>" ><a href="#Profiles" >Profiles</a></li>
+          <li class="<%= 'active' if request.original_url.to_s =~ /Problems(.*)/ %>" ><a href="#Problems" >Problems</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container">
+      <%= render :partial => 'profiles/index1' %>
+
+    </div>
+
+<% else %>
+    <ul class="bxslider">
+      <li><img src="/assets/1.jpg" /></li>
+      <li><img src="/assets/2.jpg" /></li>
+      <li><img src="/assets/3.jpg" /></li>
+      <li><img src="/assets/4.jpg" /></li>
+    </ul>
+<% end %>
+
+<div class="footer">
+  <ul>
+    <li><a href="#">Privacy</a></li>
+    <li><a href="#">Terms of Use</a></li>
+    <li><a href="#">Copyright</a></li>
+  </ul>
+</div>
