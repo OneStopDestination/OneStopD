@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 20140123171344) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "state",              limit: 45
+    t.integer  "is_mla",                                default: 0
   end
 
   create_table "signatures", force: true do |t|

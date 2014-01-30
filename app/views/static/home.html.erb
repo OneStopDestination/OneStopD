@@ -6,6 +6,13 @@
             autoControls: true,
             slideWidth:550
         });
+        $('#post_user_name').autocomplete({source: "/ajax/users"}).data("ui-autocomplete")._renderItem = function( ul, item ) {
+            var inner_html = '<a href = ' + item.link +'><div class="list_item_container"><div class="label">' + item.label + '</div></div></a>';
+            return $( "<li></li>" )
+                    .data( "item.autocomplete", item )
+                    .append(inner_html)
+                    .appendTo( ul );
+        };
     });
 
     $('#slider-next').click(function(){
@@ -15,23 +22,24 @@
 
 </script>
 <head>
-  <link href="/twitter-bootstrap/twitter-bootstrap-v2/docs/assets/css/bootstrap2.2.css" rel="stylesheet">
+
 </head>
 <section style="background-color: cornflowerblue">
   <div class="logo">
     <%= image_tag("/assets/logo.png",  :class => "gravatar", :size => 150) %>
   </div>
   <div class="title">
-    <h1><span style="font-size:1.8em">OneStopD</span></h1>
+    <h1><span style="font-size:1.1em">OneStopD</span></h1>
   </div>
   <div class="welcome">
-    <h1><span style="font-size:0.5em">Welcome User</span></h1>
+    <h1><span style="font-size:0.5em">Welcome..</span></h1>
   </div>
   <% if !signed_in? %>
   <div class="login">
     <h1><span style="font-size:0.5em"><%= link_to "Sign in now!", signin_path , :class => "btn btn-large btn-primary" %></span></h1>
   </div>
   <% else %>
+      <input type="text" id="post_user_name" placeholder="Search By politician" size="25" style="width:20%;margin-top: 18px" > </input>
       <div class="login">
         <h1><span style="font-size:0.5em"><%= link_to "Sign Out", signout_path , :class => "btn btn-large btn-primary" %></span></h1>
       </div>

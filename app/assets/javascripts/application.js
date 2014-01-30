@@ -13,4 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+//= require jquery-ui-1.10.4.custom
+
+
 

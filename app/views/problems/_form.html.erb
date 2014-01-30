@@ -12,13 +12,16 @@
   <% end %>
 
    <div class="post_form">
-    <p>Problem&nbsp;&nbsp; <%= f.text_area :description , :placeholder => "Compose new problem..." %> </p>
-    <p>Category  <%= f.text_area :category , :placeholder => "Problem Category..." %></p>
-     <%= f.hidden_field :cid, :value => @profile.constituency_id %>
-     <%= f.hidden_field :user_id_posted, :value => @profile.user_id %>
-     <div  style="margin-left: 18%">
+    <p><%= f.text_area :description , :placeholder => "Compose new problem..." %> </p>
+    <p>Choose the category<p>
+    <%= f.select :category , options_for_select(["Transportation","Food","Medical","Water","Electricity","Cleanliness","Theft or other Security problems","Environment","General"],
+                                          "gen"), {:multiple => false} %> </p>
+
+    <%= f.hidden_field :cid, :value => @profile.constituency_id %>
+    <%= f.hidden_field :user_id_posted, :value => current_user.id %>
+    <div  style="width:71%;float:right">
        <%= f.submit "Post",:class => "btn btn-primary"  %>
-     </div>
+    </div>
 
   </div>
 <% end %>

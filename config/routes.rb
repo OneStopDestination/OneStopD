@@ -2,7 +2,9 @@ One::Application.routes.draw do
   get "password_resets/new"
   resources :constituencies
 
-  resources :profiles
+  resources :profiles  do
+    get :autocomplete_user_name
+  end
 
   resources :comments
 
@@ -15,6 +17,9 @@ One::Application.routes.draw do
   resources :opinions
 
   resources :users
+  resources :ajax do
+    get :users, :on => :collection
+  end
   resources :sessions, :only => [:new, :create, :destroy]
   resources :password_resets
   root :to => 'static#home'

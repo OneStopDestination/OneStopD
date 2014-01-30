@@ -1,16 +1,17 @@
 <li id="<%= "problem_" + problem_feed_item.id.to_s %>">
 
   <span class="user">
-    <%= link_to problem_feed_item.user_id_posted, problem_feed_item.profile %>
-  </span> <br>
-  <span class="content">
-    <%= problem_feed_item.description %>
+    <strong><%= find_user_by_id(problem_feed_item.user_id_posted)%></strong>
+  </span>
+  <br>
+  <span class="content ">
+    <%= raw problem_feed_item.description %>
   </span>  <br>
   <span class="timestamp">
-    Posted <%= time_ago_in_words(problem_feed_item.created_at) %> ago.
+    Posted <%= time_ago_in_words(problem_feed_item.created_at) %> ago. &nbsp;&nbsp;&nbsp;
   </span>
   <% if current_user.id == problem_feed_item.user_id_posted %>
-      <%= link_to "delete", problem_feed_item, :method => :delete,
+      <%= link_to (image_tag '/assets/Delete.png' , size: "30x20"), problem_feed_item, :method => :delete,
                   :data => { :confirm => "You sure?" },
                   :title => problem_feed_item.description,
                   :remote => true %>
