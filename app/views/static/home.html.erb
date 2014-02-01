@@ -1,26 +1,5 @@
 <title>OneStopD</title>
-<script>
-    $(document).ready(function(){
-        $('.bxslider').bxSlider( {
-            auto: true,
-            autoControls: true,
-            slideWidth:550
-        });
-        $('#post_user_name').autocomplete({source: "/ajax/users"}).data("ui-autocomplete")._renderItem = function( ul, item ) {
-            var inner_html = '<a href = ' + item.link +'><div class="list_item_container"><div class="label">' + item.label + '</div></div></a>';
-            return $( "<li></li>" )
-                    .data( "item.autocomplete", item )
-                    .append(inner_html)
-                    .appendTo( ul );
-        };
-    });
 
-    $('#slider-next').click(function(){
-        slider.goToNextSlide();
-        return false;
-    });
-
-</script>
 <head>
 
 </head>
@@ -54,19 +33,24 @@
 
 <% if signed_in? %>
     <div class="container">
-      <div class="row">
 
-        <ul class="nav nav-tabs">
-          <li class="<%= 'active' if request.original_url.to_s =~ /Profiles(.*)/ || current_page?(root_url)    %>" ><a href="#Profiles" >Profiles</a></li>
-          <li class="<%= 'active' if request.original_url.to_s =~ /Problems(.*)/ %>" ><a href="#Problems" >Problems</a></li>
+      <div id="tabs">
+        <ul>
+          <li><a href="#tabs-1">Profiles of Politicians</a></li>
+          <li><a href="#tabs-2">Problems Reported</a></li>
+
         </ul>
+        <div id="tabs-1">
+          <%= render :partial => 'profiles/index1' %>
+        </div>
+        <div id="tabs-2">
+          two
+        </div>
+
       </div>
-    </div>
-
-    <div class="container">
-      <%= render :partial => 'profiles/index1' %>
 
     </div>
+
 
 <% else %>
     <ul class="bxslider">
@@ -84,3 +68,43 @@
     <li><a href="#">Copyright</a></li>
   </ul>
 </div>
+  </div>
+<script>
+    $(document).ready(function(){
+        $('.bxslider').bxSlider( {
+            auto: true,
+            autoControls: true,
+            slideWidth:550
+        });
+
+        $('#tabs').click('tabsselect', function (event, ui) {
+            var selectedTab = $("#tabs").tabs('option','active');
+
+            if(selectedTab == 0) {
+                $('#tabs-1').html('<%= escape_javascript(render(:partial => 'profiles/index1')).html_safe %>')
+                $('#tabs-2').html(' ')
+
+            }
+            else {
+                $('#tabs-2').html('<%= escape_javascript(render(:partial => 'problems/home_problems')).html_safe %>')
+                $('#tabs-1').html(' ')
+            }
+        });
+
+        $('#post_user_name').autocomplete({source: "/ajax/users"}).data("ui-autocomplete")._renderItem = function( ul, item ) {
+            var inner_html = '<a href = ' + item.link +'><div class="list_item_container"><div class="label">' + item.label + '</div></div></a>';
+            return $( "<li></li>" )
+                    .data( "item.autocomplete", item )
+                    .append(inner_html)
+                    .appendTo( ul );
+        };
+
+    });
+
+    $('#slider-next').click(function(){
+        slider.goToNextSlide();
+        return false;
+    });
+    $("#tabs").tabs({heightStyle: "content"});
+
+</script>
