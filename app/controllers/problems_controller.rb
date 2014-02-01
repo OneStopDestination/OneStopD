@@ -1,6 +1,6 @@
 class ProblemsController < ApplicationController
   before_action :set_problem, only: [:show, :edit, :update, :destroy]
-
+  helper :Problems
   # GET /problems
   # GET /problems.json
   def index
