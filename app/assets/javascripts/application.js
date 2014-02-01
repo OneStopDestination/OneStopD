@@ -14,10 +14,6 @@
 //= require jquery_ujs
 //= require_tree .
 //= require jquery-ui-1.10.4.custom
-//= require jquery.ui.core
-//= require jquery.ui.widget
-//= require jquery.ui.tabs
-//= require bootstrap
 
 
 

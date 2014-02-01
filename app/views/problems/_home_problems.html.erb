@@ -1,6 +1,0 @@
-<h1 style="display: inline">Problems Reported...</h1>
-<% @politician_profile = Profile.find_by_constituency_id(current_user.constituency)%>
-<span style="font-size:0.5em;margin-left: 35%"><%= link_to "Report a Problem", profile_path(@politician_profile) ,:class => "btn btn-large btn-primary"  %></span>
-
-<% @problem_feed_items=problems_for_user(current_user)  %>
-<%= render 'shared/problem_feed' %>
