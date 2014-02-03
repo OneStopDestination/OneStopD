@@ -43,14 +43,10 @@ class ProblemsController < ApplicationController
   # PATCH/PUT /problems/1
   # PATCH/PUT /problems/1.json
   def update
+    @problem.update(problem_params)
     respond_to do |format|
-      if @problem.update(problem_params)
-        format.html { redirect_to @problem, notice: 'Problem was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @problem.errors, status: :unprocessable_entity }
-      end
+      format.html { redirect_back_or(root_url) }
+      format.json { head :no_content }
     end
   end
 
@@ -59,7 +55,7 @@ class ProblemsController < ApplicationController
   def destroy
     @problem.destroy
     respond_to do |format|
-      format.html { redirect_to problems_url }
+      format.html { redirect_to root_path }
       format.json { head :no_content }
     end
   end

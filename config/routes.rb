@@ -8,7 +8,7 @@ One::Application.routes.draw do
 
   resources :comments
 
-  resources :problems  , :only => [:create, :destroy]
+  resources :problems  , :only => [:create, :destroy ,:update]
 
   resources :stats
 
