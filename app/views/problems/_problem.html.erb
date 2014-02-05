@@ -1,0 +1,38 @@
+<li id="<%= "problem_" + problem.id.to_s %>">
+
+  <span class="user">
+    <strong><%= find_user_by_id(problem.user_id_posted)%></strong>
+  </span>
+  <br>
+  <span class="content ">
+    <%= raw problem.description %> <br>
+  </span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(problem.created_at) %> ago. &nbsp;&nbsp;&nbsp;
+  </span>
+  <% if current_user.id == problem.user_id_posted %>
+      <%= link_to (image_tag '/assets/Delete.png' , size: "30x20"), problem, :method => :delete,
+                  :data => { :confirm => "You sure?" },
+                  :title => problem.description,
+                  :remote => true %>
+  <% end %>
+  <span style="margin-left: 40%">
+    <div class="wrapped-text" id="<%= "problem_resolution_" + problem.id.to_s %>" style="margin-left: 9%;color: green;font-family: verdana;font-size:large ">
+      <% if !(problem.resolution).nil? %>
+          <%= "Resolution : " + problem.resolution %>
+      <% end %>
+    </div>
+    <% if (problem.resolution).nil? && has_resolve_permissions(current_user.id) %>
+        <%= form_for(problem ,:authenticity_token => true ,:remote => :true) do |f| %>
+            <%= f.text_area :resolution, :placeholder => "Post the resolution.." %>
+            <%= f.hidden_field :user_id_resolved, :value => current_user.id %>
+            <%= f.submit "Resolve" ,:class => "btn btn-large btn-primary" %>
+        <%  end  %>
+    <% end %>
+  </span>
+  <% @problem_feed = problem %>
+  <span>
+       <%= render 'shared/comments' %>
+  </span>
+</li>
+

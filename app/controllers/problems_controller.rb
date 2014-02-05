@@ -29,7 +29,7 @@ class ProblemsController < ApplicationController
     respond_to do |format|
       if @problem.save
         format.html   {
-          flash[:success] = "Micropost created!"
+          flash[:success] = "Problem created!"
           redirect_back_or(root_url)
         }
         format.js
@@ -46,7 +46,7 @@ class ProblemsController < ApplicationController
     @problem.update(problem_params)
     respond_to do |format|
       format.html { redirect_back_or(root_url) }
-      format.json { head :no_content }
+      format.js
     end
   end
 
@@ -56,7 +56,7 @@ class ProblemsController < ApplicationController
     @problem.destroy
     respond_to do |format|
       format.html { redirect_to root_path }
-      format.json { head :no_content }
+      format.js
     end
   end
 

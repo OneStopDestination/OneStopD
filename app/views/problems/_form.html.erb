@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-   <div class="post_form">
+   <div class="post_field" id="post_field">
     <p><%= f.text_area :description , :placeholder => "Compose new problem..." %> </p>
     <p>Choose the category<p>
     <%= f.select :category , options_for_select(["Transportation","Food","Medical","Water","Electricity","Cleanliness","Theft or other Security problems","Environment","General"],

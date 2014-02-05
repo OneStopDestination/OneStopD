@@ -7,17 +7,6 @@
   <span class="content ">
     <%= raw problem_feed_item.description %> <br>
   </span>
-  <span style="margin-left: 40%">
-    <% if has_resolve_permissions(current_user.id)%>
-        <%= form_for(problem_feed_item ,:authenticity_token => true ,:remote => :true) do |f| %>
-            <%= f.text_area :resolution, :placeholder => "Post the resolution.." %>
-            <%= f.hidden_field :user_id_resolved, :value => current_user.id %>
-            <%= f.submit "Resolve" ,:class => "btn btn-large btn-primary" %>
-
-        <%  end  %>
-    <% end %>
-  </span>
-  <br>
   <span class="timestamp">
     Posted <%= time_ago_in_words(problem_feed_item.created_at) %> ago. &nbsp;&nbsp;&nbsp;
   </span>
@@ -27,7 +16,20 @@
                   :title => problem_feed_item.description,
                   :remote => true %>
   <% end %>
-
+  <span style="margin-left: 40%">
+    <div class="wrapped-text" id="<%= "problem_resolution_" + problem_feed_item.id.to_s %>" style="margin-left: 9%;color: green;font-family: verdana;font-size:large ">
+      <% if !(problem_feed_item.resolution).nil? %>
+        <%= "Resolution : " + problem_feed_item.resolution %>
+      <% end %>
+    </div>
+    <% if (problem_feed_item.resolution).nil? && has_resolve_permissions(current_user.id) %>
+        <%= form_for(problem_feed_item ,:authenticity_token => true ,:remote => :true) do |f| %>
+            <%= f.text_area :resolution, :placeholder => "Post the resolution.." %>
+            <%= f.hidden_field :user_id_resolved, :value => current_user.id %>
+            <%= f.submit "Resolve" ,:class => "btn btn-large btn-primary" %>
+        <%  end  %>
+    <% end %>
+  </span>
   <% @problem_feed = problem_feed_item %>
   <span>
        <%= render 'shared/comments' %>

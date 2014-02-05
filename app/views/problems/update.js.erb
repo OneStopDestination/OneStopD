@@ -1,0 +1,4 @@
+$("textarea#problem_resolution").val('');
+$('#<%= "edit_problem_" + @problem.id.to_s %>').remove();
+$('#<%="problem_resolution_" + @problem.id.to_s %>').html('"Resolution : " <%= @problem.resolution %>');
+

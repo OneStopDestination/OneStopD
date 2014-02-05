@@ -1,0 +1,2 @@
+$('#<%= "comments_post_" + @comment.problem.id.to_s %>').append('<%= escape_javascript(render :partial => @comment) %>');
+$('#<%= "comments_post_form_" + @comment.problem.id.to_s %> > form')[0].reset();

@@ -1,0 +1,26 @@
+<li id="<%= "comment_" + comment.id.to_s %>">
+  <div class="comment_section">
+    <strong style="padding-left: 5px;"><%= find_user_by_id(comment.user_id) %> </strong>
+    <div>
+
+      <span class="comment_content"><%= comment.comment %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(comment.created_at) %> ago.
+    <% if current_user?(comment.user) %>
+    <span class="del_link">
+    <%= link_to (image_tag '/assets/Delete.png' , size: "30x15"), comment, :method => :delete,
+                :data => { :confirm => "You sure?" },
+                :title => 'delete',
+                :remote => true %>
+    </span>
+    <br>
+  <% end %>
+  </span>
+    </div>
+  </div>
+</li>
+
+
+
+
+
