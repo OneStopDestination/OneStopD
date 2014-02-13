@@ -19,5 +19,23 @@
 //= require jquery.ui.tabs
 //= require bootstrap
 
+$(document).ready(function(){
+    $('.bxslider').bxSlider( {
+        auto: true,
+        autoControls: true,
+        slideWidth:350
+    });
 
+    $('#slider-next').click(function(){
+        slider.goToNextSlide();
+        return false;
+    });
 
+    $('#post_user_name').autocomplete({source: "/ajax/users"}).data("ui-autocomplete")._renderItem = function( ul, item ) {
+        var inner_html = '<a href = ' + item.link +'><div class="list_item_container"><div class="label">' + item.label + '</div></div></a>';
+        return $( "<li></li>" )
+            .data( "item.autocomplete", item )
+            .append(inner_html)
+            .appendTo( ul );
+    };
+});

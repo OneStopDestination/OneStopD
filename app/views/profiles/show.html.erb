@@ -1,26 +1,10 @@
 <% if signed_in? %>
-    <section style="background-color: cornflowerblue">
-      <div class="logo">
-        <%= image_tag("/assets/logo.png",  :class => "gravatar", :size => 150) %>
-      </div>
-      <div class="title">
-        <h1><span style="font-size:1.8em">OneStopD</span></h1>
-      </div>
-      <div class="welcome">
-        <h1><span style="font-size:0.5em">Welcome <%= @profile.name %></span></h1>
-      </div>
-      <div class="login">
-        <h1><span style="font-size:0.5em"><%= link_to "Sign out", signin_path , :class => "btn btn-large btn-primary" %></span></h1>
-      </div>
-    </section>
-
-
-    <section>
-      <div class="profile-content" style="margin-top: 20px ; margin-left: 20%">
+    <section style="margin-top: 30px;margin-left: 13%">
+      <div class="profile-content" style="margin-top: 20px ">
         <%= gravatar_for @profile, 250%>
 
         <p><strong>Name&nbsp;:&nbsp;</strong><%= @profile.name %>
-          <span style="font-size:0.5em;margin-left: 25%"><%= link_to "Report a Problem", "#post_form" ,:class => "btn btn-large btn-primary"  %></span>
+          <span style="font-size:0.5em;margin-left: 27%"><%= link_to "Report a Problem", "#post_form" ,:class => "btn btn-large btn-primary"  %></span>
 
         </p>
         <p><strong>Education&nbsp;:&nbsp;</strong><%= @profile.education %></p>
@@ -31,20 +15,19 @@
         <p class="wrapped-text" style="width: 75%;text-align:justify;"><strong></br>More details&nbsp;:&nbsp;</strong><%= @profile.additional_details.html_safe %></p>
 
       </div>
-    </section>
 
-    <section class="post_form" id="post_form"  style="margin-left: 20% ; width: 75%">
+
+    <section class="post_form" id="post_form">
       <hr>
-      <div style="width:70% ; float:right">
       <h3>Report a Problem</h3><br>
-      <%= render 'problems/form' %>
-      </div>
+      <%= render :partial => 'problems/form' %>
+
     </section>
 
-    <section class="problems_feed" style="margin-left: 20%;margin-right: 20%">
-      <%= render 'shared/problem_feed' %>
+    <section class="problems_feed" style="margin-right: 17%">
+      <%= render :partial => 'shared/problem_feed' %>
     </section>
-
+    </section>
 <% else %>
     redirect_to(root_path)
 <% end %>

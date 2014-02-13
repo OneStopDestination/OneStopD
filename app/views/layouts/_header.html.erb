@@ -1,0 +1,39 @@
+<header class="navbar navbar-fixed-top">
+  <div class="navbar-inner header-color">
+    <div class="container">
+      <div style="display: inline-block;">
+        <%= link_to "People's Voice", root_path, :id => "logo" ,:class => "pull-left" %>
+      </div>
+
+      <div class="pull-right" style="display: inline-block;" role="navigation">
+        <% loggedin = signed_in?
+           if loggedin %>
+            <div role="search">
+              <input type="text" id="post_user_name" class="search-input" placeholder="Search By politician"> </input>
+            </div>
+        <% end %>
+        <ul class="nav right-actions">
+
+          <li>
+            <%= link_to "Home",root_path ,:id => "header-buttons" %>
+
+          </li>
+          <% if loggedin %>
+                  <li class="divider"></li>
+                  <li>
+                    <%= link_to "Sign out", signout_path %>
+                  </li>
+                </ul>
+              </li>
+          <% else %>
+              <li>
+                <%= link_to "Sign in", signin_path %>
+
+              </li>
+
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
