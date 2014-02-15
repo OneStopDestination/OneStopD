@@ -40,7 +40,7 @@
 <script>
     $(document).ready(function(){
         $("#tabs").tabs({heightStyle: "content"});
-        $('#tabs').click('tabsselect', function (event, ui) {
+        $('#tabs ul li').click('tabsselect', function (event, ui) {
             var selectedTab = $("#tabs").tabs('option','active');
 
             if(selectedTab == 0) {
