@@ -84,11 +84,14 @@ footer small {
 
 .gravatar {
   float: left;
-  margin-right: 10px;
-  padding-right: 10px;
   display: block;
-}
+  width : 60mm;
+  height : 70mm;
 
+}
+.profiles li {
+  margin-left: 40px;
+}
 
 html {
   overflow-y: scroll;

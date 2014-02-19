@@ -1,16 +1,16 @@
 <% if signed_in? %>
     <section style="margin-top: 30px;margin-left: 13%">
       <div class="profile-content" style="margin-top: 20px ">
-        <%= gravatar_for @profile, 250%>
+        <%= gravatar_for @profile, 100%>
 
         <p><strong>Name&nbsp;:&nbsp;</strong><%= @profile.name %>
           <span style="font-size:0.5em;margin-left: 27%"><%= link_to "Report a Problem", "#post_form" ,:class => "btn btn-large btn-primary"  %></span>
 
         </p>
-        <p><strong>Education&nbsp;:&nbsp;</strong><%= @profile.education %></p>
+        <p><strong>Education&nbsp;:&nbsp;</strong><%= raw @profile.education %></p>
         <p><strong></br>Constituency&nbsp;:&nbsp;</strong><%= Constituency.find(id=@profile.constituency_id).name %></p>
         <p><strong></br>State&nbsp;:&nbsp;</strong><%= @profile.constituency_id %></p>
-        <p class="wrapped-text" style="width: 75%;text-align:justify;"><strong></br>About&nbsp;:&nbsp;</strong><%= @profile.about %></p>
+        <p class="wrapped-text" style="width: 75%;text-align:justify;"><strong></br>About&nbsp;:&nbsp;</strong><%= raw @profile.description %></p>
         <p class="wrapped-text" style="width: 75%;text-align:justify;"><strong></br>Manifesto&nbsp;:&nbsp;</strong><%=raw @profile.manifesto %></p>
         <p class="wrapped-text" style="width: 75%;text-align:justify;"><strong></br>More details&nbsp;:&nbsp;</strong><%= @profile.additional_details.html_safe %></p>
 

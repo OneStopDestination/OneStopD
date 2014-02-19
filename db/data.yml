@@ -1,0 +1,426 @@
+
+---
+constituencies:
+  columns:
+  - id
+  - name
+  - cid
+  - current_MLA
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - KAROL BAGH (CENTRAL)
+    - 1
+    - ! 'Vishesh Ravi  '
+    - 
+    - 
+  - - 2
+    - DEOLI
+    - 2
+    - Prakash
+    - 
+    - 
+  - - 3
+    - NEW DELHI
+    - 3
+    - Arvind Kejriwal
+    - 
+    - 
+  - - 4
+    - JANGPURA
+    - 4
+    - Maninder Singh Dhir
+    - 
+    - 
+  - - 5
+    - KASTURBA NAGAR
+    - 5
+    - Madan Lal
+    - 
+    - 
+  - - 6
+    - MALVIYA NAGAR
+    - 6
+    - Somnath Bharti
+    - 
+    - 
+  - - 7
+    - MANGOL PURI
+    - 7
+    - Rakhi Birla
+    - 
+    - 
+  - - 8
+    - GREATER KAILASH
+    - 8
+    - Saurabh Bharadwaj
+    - 
+    - 
+  - - 9
+    - SHALIMAR BAGH
+    - 9
+    - Bandana Kumari
+    - 
+    - 
+  - - 10
+    - SHAKUR BASTI
+    - 10
+    - Satyender Kumar Jain
+    - 
+    - 
+  - - 11
+    - DELHI CANTT
+    - 11
+    - Surender Singh
+    - 
+    - 
+  - - 12
+    - MODEL TOWN
+    - 12
+    - Akhilesh Pati Tripathi
+    - 
+    - 
+  - - 13
+    - SEEMA PURI
+    - 13
+    - Dharmender Singh Koli
+    - 
+    - 
+  - - 14
+    - MADIPUR
+    - 14
+    - Girish Soni
+    - 
+    - 
+  - - 15
+    - SANGAM VIHAR
+    - 15
+    - Dinesh Mohaniya
+    - 
+    - 
+  - - 16
+    - LAXMI NAGAR
+    - 16
+    - Vinod Kumar Binny
+    - 
+    - 
+  - - 17
+    - BURARI
+    - 17
+    - Sanjeev Jha
+    - 
+    - 
+  - - 18
+    - TIMARPUR
+    - 18
+    - Harish Khanna
+    - 
+    - 
+  - - 19
+    - AMBEDKAR NAGAR
+    - 19
+    - Ashok Kumar
+    - 
+    - 
+  - - 20
+    - SADAR BAZAR
+    - 20
+    - Som Dutt Sharma
+    - 
+    - 
+  - - 21
+    - HARI NAGAR
+    - 21
+    - Jagdeep Singh
+    - 
+    - 
+  - - 22
+    - ROHINI
+    - 22
+    - Rajesh Garg Rohiniwala
+    - 
+    - 
+  - - 23
+    - TILAK NAGAR
+    - 23
+    - Jarnail Singh
+    - 
+    - 
+  - - 24
+    - KONDLI
+    - 24
+    - Manoj Kumar
+    - 
+    - 
+  - - 25
+    - PATEL NAGAR
+    - 25
+    - Veena Anand
+    - 
+    - 
+  - - 26
+    - VIKASPURI
+    - 26
+    - Mahinder Yadav
+    - 
+    - 
+  - - 27
+    - TRILOKPURI
+    - 27
+    - Raju
+    - 
+    - 
+  - - 28
+    - PATPARGANJ
+    - 28
+    - Manish Sisodia
+    - 
+    - 
+
+---
+profiles:
+  columns:
+  - id
+  - name
+  - education
+  - additional_details
+  - description
+  - manifesto
+  - pid
+  - user_id
+  - constituency_id
+  - created_at
+  - updated_at
+  - state
+  records: 
+  - - 1
+    - ! 'Vishesh Ravi  '
+    - B.Com  in 2005
+    - ! "The excerpts of an interview of Vishesh Ravi about his journey from running
+      an NGO to Delhi’s Assembly:\nQ: How was your journey from a common man to an
+      MLA now?\nVishesh Ravi (VR): Well its been very good and as you know everything
+      requires some hardwork, as success cannot be achieved without it. We did it
+      and the result is in front of you.\nQ: As far as we know you work for a non-profit
+      organisation named 'Delhi Vikas Sanastha'. So when and how it came into you
+      mind to join politics and Aam Aadmi Party?\nVR: See the NGO and the politics
+      both will be different each other. I thought that politics will be an added
+      advantage to provide a necessary platform to extend helping hand to the people
+      and it will give me an opportunity to do my work in a more organized manner.\nQ:
+      Why did you join the Aam Aadmi Party?\nVR: Because I think that the ideology
+      of AAP is the logical one, it speaks truth, fairness and talks about the people's
+      problem. It provides the platform to serve the people, thats why I joined the
+      AAP.\nQ: So were you knowing Arvind Kejriwal earlier? Were you the part of Anna
+      movement against the corruption?\nVR: No, I was not the part of Anna movement
+      but I really liked the issues they were fighting for. I was not knowing Arvind
+      Kejriwal before the Anna movement in Delhi. All that I knew was that he was
+      one of the leading faces in that movement.\nQ: How you came into the contact
+      of Arvind Kejriwal formally?\nVR: Actually as you know that we run a non-profit
+      organization in Delhi namely 'Delhi Vikas Santhan' since the last 10 years actually.
+      \ My father started it and now I am carrying it forward. We help people in fighting
+      for their issues. So while doing this all public work, I came into contact of
+      Arvind Kejriwal Ji.\nQ: Do you have any role model in real life or politics?
+      Any person you follow or you like?\nVR: Well there are couple of personalities
+      I like, but the one I really admire is Shri Atal Bihari Vajpayee, and yeah of
+      course Arvind Kejriwal and Anna Hazare are also the personalities I really admire.\nQ:
+      While talking about the elections you cannot neglect the expenses that you incur
+      during the entire campaigning and managing meetings? So how did you arrange
+      funds to bear those expenses?\nVR: Most of the funds I arranged on my own and
+      yes there was also some help from the party fund. Plus we went door to door
+      and took donations for the party.  \nQ: Its been now almost clear that you will
+      be sitting in the opposition. So what will be your next step or plans?\nVR:
+      Well we work according to the party plans.We will do the right politics and
+      will focus on those issues and the problems of the public that we had promised
+      to look after before the elections.\n\nFor more information on Vishesh Ravi:\nhttps://www.facebook.com/vishesh.ravi?fref=ts\nhttps://www.facebook.com/VisheshRaviforMLA\nFor
+      more confirmation of affidavits:  \nhttp://ceodelhi.gov.in/WriteReadData/Affidavits/U05/SE/23/1-VISHESH%20RAVI/1-VISHESH%20RAVI.htm\n"
+    - ! 'Aam Aadmi Party''s newly elected MLA Vishesh Ravi worked for a non-profit
+      organization ''Delhi Vikas Sanstha'' started by his father in the year 1993.
+      Ravi contested for the elections from Karol Bagh constituency and defeated his
+      immediate rival from BJP''s Surendra Pal Ratawal by 1750 votes. Ravi got 35,
+      818 votes in the Assembly Elections.
+
+
+'
+    - https://app.box.com/s/jtqvvjw2p5lqhwu7kqzp
+    - 1
+    - '16'
+    - 1
+    - 2014-01-06 05:48:24.000000000 Z
+    - 2014-01-06 05:48:24.000000000 Z
+    - Delhi
+  - - 2
+    - Prakash
+    - ! "10th Pass From CBSE Board In 2004.<br>\n12th Pass Commerce From CBSE Board
+      In 2006.<br>\nB.Com(H) From Delhi University In 2009.\nM.Com From Delhi university
+      In 2011\r\n"
+    - ! "https://www.facebook.com/AAPDLDeoli\r\n"
+    - ! "Prakash, an assistant manager with a multinational company has been running
+      awareness campaigns since his student life. It has been a passion for Prakash,
+      to help such people in his area, who have been deprived of government schemes
+      because they did not have sufficient documents. He has been working since along
+      time for helping uneducated people open bank accounts and helping people get
+      voter cards and ration cards. He also assists the children of economically weak
+      families get free education. He has worked as a volunteer in Janlokpal movement.
+      He has been actively participating in all movements and demonstrations after
+      the formation of the party.\r\n\r\n"
+    - https://app.box.com/s/jnz5gwty2oejgzkbu7gi
+    - 2
+    - '17'
+    - 2
+    - 
+    - 
+    - delhi
+  - - 3
+    - Arvind Kejriwal
+    - ! "Graduate Professional\r\nB. Tech Mechanical Engineering I.I.T Kharagpur In
+      1989"
+    - ! "https://www.facebook.com/AAPDelhiNCR\r\n"
+    - ! "Arvind Kejriwal was an Income Tax Commissioner before he left his job and
+      started working as a full time activist fighting against corruption. He was
+      one of the most prominent figures who pushed for the Right-To-Information to
+      be passed as a law. He also worked a lot in raising the mass awareness about
+      RTI. Arvind along with Sri Anna Hazare ignited the biggest fight against corruption
+      at a level which was never seen in last 4 decades. On innumerous occasions he
+      has busted and unfolded many of the scams involving leading businessmen, bureaucrats,
+      and politicians of India. He also sat for a 15 days fast to raise voice against
+      sufferings caused to comman men by unjustified and irrational high charges for
+      water-electricity.\r\n"
+    - ! "http://media2.intoday.in/indiatoday/aap_manifesto.pdf\r\n"
+    - 3
+    - Arvind Kejriwal
+    - 3
+    - 
+    - 
+    - ''
+  - - 4
+    - Maninder Singh Dhir
+    - ! "Post Graduate\r\n\r\nHigher Secondary School From CBSE In 1971.\r\n\r\nBachelor
+      Of Arts From Dayal Singh College. University Of Delhi In 1975, Master OF Arts
+      ( Public Administration) From University Of Rajsthan In 1985"
+    - ! "https://www.facebook.com/msdhir\r\nhttps://www.facebook.com/AAPDLJangpura?filter=2\r\n"
+    - ! "Mr Dhir, a first-time legislator like most of the AAP members in the House,
+      defeated the Bharatiya Janata Party's (BJP) Jagdish Mukhi. He got 37 votes.
+      The Congress and a sole Janata Dal United (JDU) member voted for the AAP leader.\r\n\r\nMr
+      Mukhi got his party's 31 votes and one from ally, the Akali Dal. The Delhi Assembly
+      has 70 members.\r\n\r\nYesterday, Chief Minister Arvind Kejriwal, who has 28
+      MLAs and heads a minority government, had won a trust vote with the support
+      of the Congress, the JD(U) lawmaker Shoaib Iqbal and an Independent.\r\n \r\nThe
+      BJP, which is the single largest party in the House had opposed the motion and
+      said it would also contest for Speaker. \r\n\r\nMr Kejriwal had not appeared
+      unduly worried. \"Whoever becomes Speaker, it does not matter,\" he had said
+      yesterday."
+    - ''
+    - 4
+    - Maninder Singh Dhir
+    - 4
+    - 
+    - 
+    - 
+  - - 5
+    - Madan Lal
+    - ! "Post Graduate\r\n\r\nM.A. LL.B. From M.M.H. College, Ghaziabad, Meerut University,
+      U.P. In The Year Of 1981\r\n"
+    - https://www.facebook.com/AAPDLKasturbaNagar
+    - ''
+    - not available
+    - 5
+    - Madan Lal
+    - 5
+    - 
+    - 
+    - 
+  - - 6
+    - Somnath Bharti
+    - ! "Post Graduate\r\n\r\n(M.SC.)(Math) Fom Indian Institute Of Technology, Delhi
+      in 1997, LLB From Law Center-11, University Of Delhi in 2008"
+    - http://www.facebook.com/AAPDLMalviyaNagar
+    - ! "After doing MSc from Indian Institute of Technology, Somnath Bharti pursued
+      a degree in Law and started his career as a lawyer. He fights for social causes
+      through his profession as a lawyer and drags issues dealing with society to
+      the court to bring them to justice. After the Delhi gang rape case, Delhi Police
+      tried to falsely convict around 8 innocent young boys, Somnath Bharti fought
+      for those young boys and helped them get justice. He was an active member during
+      Janlokpal movement and has also been president of IIT-Alumni association.\r\n"
+    - 
+    - 6
+    - Somnath Bharti
+    - 6
+    - 
+    - 
+    - 
+  - - 7
+    - Rakhi Birla
+    - ! "Post Graduate\r\n\r\nM.A.Mass Com. Pass From Guru Jambeshwar University In
+      2010"
+    - http://www.facebook.com/AAPDLMangolpuri
+    - ! "Rakhi is a journalist with a private news channel. Apart from that she works
+      in collaboration with few social institutes and works for the causes of Valmiki
+      community. She hails from Valmiki community and her father was associated with
+      Congress for a long time but quit it in 2011 during Janlokpal movement.\r\n"
+    - https://app.box.com/s/d983nehswzcweke4du0q
+    - 7
+    - Rakhi Birla
+    - 7
+    - 
+    - 
+    - 
+  - - 8
+    - Saurabh Bharadwaj
+    - ! "Graduate Professional\r\n\r\nB.Tech In Computer Science And Engineering,
+      Bharti Vidhyapeeth Collage Of Engineering Guru Gobind Singh Indraprastha University,
+      Delhi In 2003"
+    - http://www.facebook.com/AAPDLGreaterKailash
+    - ! "Saurabh Bharadwaj is an engineer by profession. He was working in a private
+      firm when in 2005 a horrendous incidence of rape happened with a poor girl.
+      This incident shook him so much that he started to fight to get her. During
+      this period he figured that to provide justice in these matters it is imperative
+      that one should have legal knowledge. He studied law and regularly helps the
+      poor in giving them all legal help possible. He constantly raises his voice
+      for the blind, poor students, flood affected and old.\r\n"
+    - https://app.box.com/s/53l0xi42v54g6vzcwghx
+    - 8
+    - Saurabh Bharadwaj
+    - 8
+    - 
+    - 
+    - 
+  - - 9
+    - Bandana Kumari
+    - ! "Graduate\r\n\r\n12th Passed From BSE Board Patna Ram Brikash Benipuri School
+      Muzzafernagar In 1991,BA From BR. Ambedkar Bihar University Muzzafernagar In
+      1991-94."
+    - http://www.facebook.com/AAPDLShalimarBagh
+    - ! "Bandana is fighting for the cause of poor women's rights and prevent them
+      from domestic violence abuse & harassment. She is also the convenor of a social
+      organization 'Nayi Pehal' which is doing a commendable job in spreading the
+      awareness about women empowerment. Through this medium the organization aims
+      to empower women and make them independent. Bandana was actively involved in
+      Janlokpal movement and has been regular activist in all the movements in the
+      aftermaths of Janlokpal movement.\r\n"
+    - https://app.box.com/s/dyjtrwewuwns8jnmhc6a
+    - 9
+    - Bandana Kumari
+    - 9
+    - 
+    - 
+    - 
+  - - 10
+    - Satyender Kumar Jain
+    - ! "Graduate Professional\r\n\r\nB.Arch. From Associate Membership Of Indian
+      Institute Of Architects In 1992"
+    - http://www.facebook.com/AAPDLShakurbasti
+    - ! "An architect by profession, Satyendra used to work at CPWD but fed up with
+      the level of corruption in the department he quite his job and started providing
+      architecture consultancy. He actively joined during the Janlokpal movement and
+      is often seen fighting for social causes. He helped in getting the building
+      consturcted for an organization that works for blind girls in Chitrakoot. He
+      is also associated with with an organization named Sparsh, that works for the
+      welfare of mentally challenged children. Satyendra also helps and aids for the
+      marriages of girls from poor families in his area.\r\n"
+    - not available
+    - 10
+    - Satyender Kumar Jain
+    - 10
+    - 
+    - 
+    - 

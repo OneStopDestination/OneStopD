@@ -2,7 +2,7 @@ module UsersHelper
   def gravatar_for(profile, size)
     #  gravatar_id = Digest::MD5::hexdigest(user.email.downcase)
     # gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}"
-    image_tag("/assets/"+profile.id.to_s + ".jpg", :alt => profile.name, :class => "gravatar", :size => size.to_s + "x" +size.to_s)
+    image_tag("/assets/"+profile.id.to_s + ".jpg", :alt => profile.name, :class => "gravatar", height: '200', width: '250' )
   end
 
   def find_user_by_id(uid)

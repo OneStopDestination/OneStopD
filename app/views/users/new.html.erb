@@ -1,7 +1,7 @@
 <% provide(:title, 'Sign up') %>
 <p style="float: right ; margin-right: 10px"></p>
 
-<section class="center-page offset3 signup autoTextHeight" style="margin-top: 100px">
+<section class="center-page offset5 signup autoTextHeight" style="margin-top: 100px">
   <div class=" row offset1 ">
     <h1 style="margin-bottom: 30px">Sign Up</h1>
     <%= form_for(@user) do |f| %>
@@ -14,6 +14,9 @@
 
         <%= f.label :mob_no %>
         <%= f.text_field :mob_no %>
+
+        <%= f.label :Constituency %>
+        <%= f.text_field :constituency %>
 
         <%= f.label :password %>
         <%= f.password_field :password %>
