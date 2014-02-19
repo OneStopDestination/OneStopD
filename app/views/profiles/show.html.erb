@@ -10,9 +10,9 @@
         <p><strong>Education&nbsp;:&nbsp;</strong><%= raw @profile.education %></p>
         <p><strong></br>Constituency&nbsp;:&nbsp;</strong><%= Constituency.find(id=@profile.constituency_id).name %></p>
         <p><strong></br>State&nbsp;:&nbsp;</strong><%= @profile.constituency_id %></p>
-        <p class="wrapped-text" style="width: 75%;text-align:justify;"><strong></br>About&nbsp;:&nbsp;</strong><%= raw @profile.description %></p>
-        <p class="wrapped-text" style="width: 75%;text-align:justify;"><strong></br>Manifesto&nbsp;:&nbsp;</strong><%=raw @profile.manifesto %></p>
-        <p class="wrapped-text" style="width: 75%;text-align:justify;"><strong></br>More details&nbsp;:&nbsp;</strong><%= @profile.additional_details.html_safe %></p>
+        <p class="wrapped-text" style="width: 75%;text-align:justify;"><strong></br>About&nbsp;:&nbsp;</strong><%= auto_link(raw @profile.description) %></p>
+        <p class="wrapped-text" style="width: 75%;text-align:justify;"><strong></br>Manifesto&nbsp;:&nbsp;</strong><%=auto_link(@profile.manifesto) %></p>
+        <p class="wrapped-text" style="width: 75%;text-align:justify;"><strong></br>More details&nbsp;:&nbsp;</strong><%= auto_link( raw @profile.additional_details.html_safe) %></p>
 
       </div>
 
