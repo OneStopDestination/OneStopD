@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140123171344) do
+ActiveRecord::Schema.define(version: 20140218141217) do
 
   create_table "comments", force: true do |t|
     t.text     "comment"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20140123171344) do
   end
 
   add_index "comments", ["opinion_id"], name: "id_idx", using: :btree
-  add_index "comments", ["problem_id"], name: "id_idx1", using: :btree
+  add_index "comments", ["problem_id"], name: "problem_id_idx", using: :btree
   add_index "comments", ["user_id"], name: "uid_idx", using: :btree
 
   create_table "constituencies", force: true do |t|
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20140123171344) do
     t.text     "resolution"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "description",      limit: 2147483647
+    t.string   "description",      limit: 500
   end
 
   add_index "problems", ["cid"], name: "cid_idx", using: :btree
@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 20140123171344) do
     t.string   "name"
     t.text     "education"
     t.text     "additional_details", limit: 2147483647
-    t.text     "about",              limit: 2147483647
+    t.text     "description",        limit: 2147483647
     t.text     "manifesto",          limit: 2147483647
     t.integer  "pid"
     t.string   "user_id"
@@ -70,7 +70,6 @@ ActiveRecord::Schema.define(version: 20140123171344) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "state",              limit: 45
-    t.integer  "is_mla",                                default: 0
   end
 
   create_table "signatures", force: true do |t|
@@ -94,7 +93,7 @@ ActiveRecord::Schema.define(version: 20140123171344) do
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
-    t.integer  "mob_no"
+    t.integer  "mob_no",                 limit: 8
     t.string   "constituency"
     t.datetime "created_at"
     t.datetime "updated_at"

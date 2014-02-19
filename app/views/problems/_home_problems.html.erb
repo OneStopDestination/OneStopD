@@ -1,9 +1,10 @@
 <% if signed_in? %>
 <h1 style="display: inline">Problems Reported...</h1>
-
-<% @politician_profile = Profile.find_by_constituency_id(Constituency.find_by_name(current_user.constituency).id)%>
-<span style="font-size:0.5em;margin-left: 35%"><%= link_to "Report a Problem", profile_path(@politician_profile) ,:class => "btn btn-large btn-primary"  %></span>
-
-<% @problem_feed_items=problems_for_user(current_user)  %>
-<%= render 'shared/problem_feed' %>
+    <% if !(Constituency.find_by_name(current_user.constituency).nil?) %>
+        <% cid = Constituency.find_by_name(current_user.constituency).id %>
+        <% @politician_profile = Profile.find_by_constituency_id(cid)%>
+        <span style="font-size:0.5em;margin-left: 35%"><%= link_to "Report a Problem", profile_path(@politician_profile) ,:class => "btn btn-large btn-primary"  %></span>
+        <% @problem_feed_items=problems_for_user(current_user)  %>
+        <%= render 'shared/problem_feed' %>
+    <% end %>
 <% end %>

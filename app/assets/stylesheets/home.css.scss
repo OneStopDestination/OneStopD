@@ -258,3 +258,11 @@ select{
 .header-buttons {
   color: blue;
 }
+
+
+.required:after
+{
+  content: "*";
+  font-weight: bold;
+  color: red;
+}

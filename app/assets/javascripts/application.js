@@ -23,7 +23,7 @@ $(document).ready(function(){
     $('.bxslider').bxSlider( {
         auto: true,
         autoControls: true,
-        slideWidth:350
+        slideWidth:500
     });
 
     $('#slider-next').click(function(){
