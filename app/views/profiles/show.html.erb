@@ -9,7 +9,7 @@
         </p>
         <p><strong>&nbsp;&nbsp;Education&nbsp;:&nbsp;</strong><%= raw @profile.education %></p>
         <p><strong></br>&nbsp;&nbsp;Constituency&nbsp;:&nbsp;</strong><%= Constituency.find(id=@profile.constituency_id).name %></p>
-        <p><strong></br>&nbsp;&nbsp;State&nbsp;:&nbsp;</strong><%= @profile.constituency_id %></p>
+        <p><strong></br>&nbsp;&nbsp;State&nbsp;:&nbsp;</strong><%= @profile.state %></p>
         <p class="wrapped-text" style="width: 75%;text-align:justify;"><strong></br>&nbsp;&nbsp;About&nbsp;:&nbsp;</strong><%= auto_link(raw @profile.description) %></p>
         <p class="wrapped-text" style="width: 75%;text-align:justify;"><strong></br>&nbsp;&nbsp;Manifesto&nbsp;:&nbsp;</strong><%=auto_link(@profile.manifesto) %></p>
         <p class="wrapped-text" style="width: 75%;text-align:justify;"><strong></br>&nbsp;&nbsp;More details&nbsp;:&nbsp;</strong><%= auto_link( raw @profile.additional_details.html_safe) %></p>
