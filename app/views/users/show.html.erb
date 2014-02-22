@@ -1,26 +1,4 @@
-<% if signed_in? %>
-    <section style="background-color: cornflowerblue">
-      <div class="logo">
-        <%= image_tag("/assets/logo.png",  :class => "gravatar", :size => 150) %>
-      </div>
-      <div class="title">
-        <h1><span style="font-size:1.8em">OneStopD</span></h1>
-      </div>
-      <div class="welcome">
-        <h1><span style="font-size:0.5em">Welcome <%= @user %></span></h1>
-      </div>
-      <div class="login">
-        <h1><span style="font-size:0.5em"><%= link_to "Sign out", signin_path , :class => "btn btn-large btn-primary" %></span></h1>
-      </div>
-    </section>
-
-
-<% else %>
-
-
-<% end %>
-
-
+<br><br>
 <p id="notice"><%= notice %></p>
 
 <p>
