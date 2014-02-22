@@ -19,22 +19,19 @@
     <%= f.label :education %><br>
     <%= f.text_area :education %>
   </div>
+
   <div class="field">
-    <%= f.label :profile_pic %><br>
-    <%= f.text_area :profile_pic %>
-  </div>
-  <div class="field">
-    <%= f.label :about %><br>
-    <%= f.text_area :about %>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
   </div>
   <div class="field">
     <%= f.label :manifesto %><br>
     <%= f.text_area :manifesto %>
   </div>
-  <div class="field">
-    <%= f.label :pid %><br>
-    <%= f.number_field :pid %>
-  </div>
+    <div class="field">
+      <%= f.label :additional_details %><br>
+      <%= f.text_area :additional_details %>
+    </div>
   <div class="field">
     <%= f.label :user_id %><br>
     <%= f.text_field :user_id %>
@@ -43,6 +40,10 @@
     <%= f.label :constituency_id %><br>
     <%= f.number_field :constituency_id %>
   </div>
+    <div class="field">
+      <%= f.label :state %><br>
+      <%= f.text_field :state %>
+    </div>
   <div class="actions">
     <%= f.submit %>
   </div>
