@@ -1,9 +1,12 @@
-<h1>Reset Password</h1>
-
-<%= form_tag password_resets_path, :method => :post do %>
-    <div class="field">
+<section class="center-page offset5 autoTextHeight signup" style="margin-top: 100px">
+  <div class=" row offset1 ">
+    <%= form_tag password_resets_path, :method => :post do %>
+     <div class="field">
+      <h1 style="margin-bottom: 30px">Reset Password</h1>
       <%= label_tag :email %>
       <%= text_field_tag :email, params[:email] %>
-    </div>
-    <div class="actions"><%= submit_tag "Reset Password" %></div>
+     </div>
+    <div class="actions"><%= submit_tag "Reset Password",:class => "btn btn-large btn-primary" %></div>
 <% end %>
+  </div>
+</section>

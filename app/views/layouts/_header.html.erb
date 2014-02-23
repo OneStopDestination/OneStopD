@@ -20,6 +20,12 @@
           <% if loggedin %>
                   <li class="divider"></li>
                   <li>
+                    <% profile_data =  profile_for_user(current_user) %>
+                    <% if profile_data  %>
+                        <a href="<%= profile_path(profile_data) %>"><span><%= current_user.name %></span> </a>
+                    <% end %>
+                  </li>
+                  <li>
                     <%= link_to "Sign out", signout_path %>
                   </li>
           <% else %>

@@ -1,7 +1,9 @@
-<h1>Reset Password</h1>
+<section class="center-page offset5 autoTextHeight signup" style="margin-top: 100px">
+  <div class=" row offset1 ">
 
-<%= form_for @user, :url => password_reset_path(params[:id]) do |f| %>
-    <% if @user.errors.any? %>
+  <%= form_for @user, :url => password_reset_path(params[:id]) do |f| %>
+        <h1 style="margin-bottom: 30px">Reset Password</h1>
+     <% if @user.errors.any? %>
         <div class="error_messages">
           <h2>Form is invalid</h2>
           <ul>
@@ -11,6 +13,7 @@
           </ul>
         </div>
     <% end %>
+
     <div class="field">
       <%= f.label :password %>
       <%= f.password_field :password %>
@@ -19,5 +22,7 @@
       <%= f.label :password_confirmation %>
       <%= f.password_field :password_confirmation %>
     </div>
-    <div class="actions"><%= f.submit "Update Password" %></div>
+    <div class="actions"><%= f.submit "Update Password",:class => "btn btn-large btn-primary" %></div>
 <% end %>
+  </div>
+</section>

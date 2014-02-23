@@ -11,5 +11,11 @@ module UsersHelper
 
   def has_resolve_permissions(uid)
     return !Profile.find_by_user_id(uid).nil?
+    cid = Constituency.find_by_name(cname)
+    Profile.find_by_constituency_id_and_user_id(constituency_id=cid,user_id=uid)
+  end
+
+  def profile_for_user(cuser)
+    return Profile.find_by_user_id(cuser.id)
   end
 end
