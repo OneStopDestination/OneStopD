@@ -10,6 +10,6 @@ module UsersHelper
   end
 
   def has_resolve_permissions(uid)
-    !Profile.find_all_by_user_id(uid).nil?
+    return !Profile.find_by_user_id(uid).nil?
   end
 end
