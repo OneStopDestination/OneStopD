@@ -28,6 +28,8 @@ One::Application.routes.draw do
   get '/signin',  :to => 'sessions#new'
   get '/profiles', :to => 'profiles#index'
   get '/signout', :to => 'sessions#destroy', :via => :delete
+  get '/about' ,  :to => 'static#about'
+  get '/contact' ,  :to => 'static#contact'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
