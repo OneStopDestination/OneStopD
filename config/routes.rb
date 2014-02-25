@@ -22,11 +22,12 @@ One::Application.routes.draw do
   end
   resources :sessions, :only => [:new, :create, :destroy]
   resources :password_resets
+
+
   root :to => 'static#home'
 
   get '/signup',  :to => 'users#new'
   get '/signin',  :to => 'sessions#new'
-  get '/profiles', :to => 'profiles#index'
   get '/signout', :to => 'sessions#destroy', :via => :delete
   get '/about' ,  :to => 'static#about'
   get '/contact' ,  :to => 'static#contact'

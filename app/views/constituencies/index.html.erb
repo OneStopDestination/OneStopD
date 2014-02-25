@@ -1,3 +1,4 @@
+<% if signed_in? &&  current_user.email == "nationsevoice.acct@gmail.com" %>
 <h1>Listing constituencies</h1>
 
 <table>
@@ -29,3 +30,6 @@
 <br>
 
 <%= link_to 'New Constituency', new_constituency_path %>
+<% else %>
+    <%=  render :file => 'public/404.html', :status => :not_found, :layout => false   %>
+<% end %>

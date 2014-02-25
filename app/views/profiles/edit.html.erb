@@ -1,6 +1,10 @@
+<% if signed_in? &&  current_user.email == "nationsevoice.acct@gmail.com" %>
 <h1>Editing profile</h1>
 
 <%= render 'form' %>
 
 <%= link_to 'Show', @profile %> |
 <%= link_to 'Back', profiles_path %>
+<% else %>
+    <%=  render :file => 'public/404.html', :status => :not_found, :layout => false   %>
+<% end %>

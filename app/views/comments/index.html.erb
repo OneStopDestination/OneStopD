@@ -1,31 +1,39 @@
-<h1>Listing comments</h1>
+<% if signed_in? &&  current_user.email == "nationsevoice.acct@gmail.com" %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Comment</th>
-      <th>Opinion</th>
-      <th>User</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+    <h1>Listing comments</h1>
 
-  <tbody>
-    <% @comments.each do |comment| %>
+    <table>
+      <thead>
       <tr>
-        <td><%= comment.comment %></td>
-        <td><%= comment.opinion_id %></td>
-        <td><%= comment.user_id %></td>
-        <td><%= link_to 'Show', comment %></td>
-        <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
-        <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Comment</th>
+        <th>Opinion</th>
+        <th>User</th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+      </thead>
 
-<br>
+      <tbody>
+      <% @comments.each do |comment| %>
+          <tr>
+            <td><%= comment.comment %></td>
+            <td><%= comment.opinion_id %></td>
+            <td><%= comment.user_id %></td>
+            <td><%= link_to 'Show', comment %></td>
+            <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
+            <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
 
-<%= link_to 'New Comment', new_comment_path %>
+    <br>
+
+    <%= link_to 'New Comment', new_comment_path %>
+
+<% else %>
+    <%=  render :file => 'public/404.html', :status => :not_found, :layout => false   %>
+<% end %>
+
+

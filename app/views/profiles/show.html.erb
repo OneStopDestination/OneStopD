@@ -28,11 +28,14 @@
       <%= render :partial => 'shared/problem_feed' %>
     </section>
     </section>
+    <% if current_user.email == "nationsevoice.acct@gmail.com" %>
+    <%= link_to 'Edit', edit_profile_path(@profile) %> |
+    <%= link_to 'Back', profiles_path %>
+    <% end %>
 <% else %>
     redirect_to(root_path)
 <% end %>
 
 
 
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
+

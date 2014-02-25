@@ -1,6 +1,12 @@
-<h1>Editing comment</h1>
+<% if signed_in? &&  current_user.email == "nationsevoice.acct@gmail.com" %>
+    <h1>Editing comment</h1>
 
-<%= render 'form' %>
+    <%= render 'form' %>
 
-<%= link_to 'Show', @comment %> |
-<%= link_to 'Back', comments_path %>
+    <%= link_to 'Show', @comment %> |
+    <%= link_to 'Back', comments_path %>
+
+<% else %>
+    <%=  render :file => 'public/404.html', :status => :not_found, :layout => false   %>
+<% end %>
+

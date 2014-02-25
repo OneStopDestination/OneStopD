@@ -1,19 +1,26 @@
-<p id="notice"><%= notice %></p>
+<% if signed_in? &&  current_user.email == "nationsevoice.acct@gmail.com" %>
 
-<p>
-  <strong>Comment:</strong>
-  <%= @comment.comment %>
-</p>
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Opinion:</strong>
-  <%= @comment.opinion_id %>
-</p>
+    <p>
+      <strong>Comment:</strong>
+      <%= @comment.comment %>
+    </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @comment.user_id %>
-</p>
+    <p>
+      <strong>Opinion:</strong>
+      <%= @comment.opinion_id %>
+    </p>
 
-<%= link_to 'Edit', edit_comment_path(@comment) %> |
-<%= link_to 'Back', comments_path %>
+    <p>
+      <strong>User:</strong>
+      <%= @comment.user_id %>
+    </p>
+
+    <%= link_to 'Edit', edit_comment_path(@comment) %> |
+    <%= link_to 'Back', comments_path %>
+
+<% else %>
+    <%=  render :file => 'public/404.html', :status => :not_found, :layout => false   %>
+<% end %>
+

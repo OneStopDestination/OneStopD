@@ -1,10 +1,15 @@
-<h1>Listing profiles</h1>
+<% if signed_in? &&  current_user.email == "nationsevoice.acct@gmail.com" %>
+
+    <h1>Listing profiles</h1>
     <% @profiles.each do |profile| %>
-      <%= gravatar_for profile, 100%>
-      <%= link_to profile.name, profile %>
+        <%= gravatar_for profile, 100%>
+        <%= link_to profile.name, profile %>
     <% end %>
+    <br><br><br><br>
+    <%= link_to 'New Profile', new_profile_path %>
+
+<% else %>
+    <%=  render :file => 'public/404.html', :status => :not_found, :layout => false   %>
+<% end %>
 
 
-<br><br><br><br>
-
-<%= link_to 'New Profile', new_profile_path %>

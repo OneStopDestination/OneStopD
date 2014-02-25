@@ -1,6 +1,13 @@
-<h1>Editing problem</h1>
+<% if signed_in? &&  current_user.email == "nationsevoice.acct@gmail.com" %>
+    <h1>Editing problem</h1>
 
-<%= render 'form' %>
+    <%= render 'form' %>
 
-<%= link_to 'Show', @problem %> |
-<%= link_to 'Back', problems_path %>
+    <%= link_to 'Show', @problem %> |
+    <%= link_to 'Back', problems_path %>
+
+<% else %>
+    <%=  render :file => 'public/404.html', :status => :not_found, :layout => false   %>
+<% end %>
+
+

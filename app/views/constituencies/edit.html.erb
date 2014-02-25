@@ -1,6 +1,13 @@
+<% if signed_in? &&  current_user.email == "nationsevoice.acct@gmail.com" %>
 <h1>Editing constituency</h1>
 
 <%= render 'form' %>
 
 <%= link_to 'Show', @constituency %> |
 <%= link_to 'Back', constituencies_path %>
+<% else %>
+<%=  render :file => 'public/404.html', :status => :not_found, :layout => false   %>
+<% end %>
+
+
+

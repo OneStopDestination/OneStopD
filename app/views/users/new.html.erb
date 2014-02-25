@@ -1,3 +1,16 @@
+<script>
+    $(document).ready(function(){
+        $('#post_constituency_name').autocomplete({source: "/ajax/constituencies"}).data("ui-autocomplete")._renderItem = function( ul, item ) {
+            var inner_html = '<div class="list_item_container"><div class="label">' + item.label + '</div></div>';
+            return $( "<li></li>" )
+                    .data( "item.autocomplete", item )
+                    .append(inner_html)
+                    .appendTo( ul );
+        };
+
+    });
+
+</script>
 <% provide(:title, 'Sign up') %>
 <p style="float: right ; margin-right: 10px"></p>
 
@@ -12,8 +25,8 @@
         <%= f.label :email ,:class => "required" %>
         <%= f.text_field :email %>
 
-        <%= f.label :Constituency ,:class => "required"%>
-        <%= f.text_field :constituency %>
+        <%= f.label :Constituency ,:class => "required" %>
+        <%= f.text_field :constituency , :id => "post_constituency_name" %>
 
         <%= f.label :mob_no %>
         <%= f.text_field :mob_no %>
@@ -30,5 +43,6 @@
 
   </div>
 </section>
+
 
 

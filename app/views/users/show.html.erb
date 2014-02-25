@@ -1,30 +1,38 @@
-<br><br>
-<p id="notice"><%= notice %></p>
+<% if signed_in? &&  current_user.email == "nationsevoice.acct@gmail.com" %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+    <br><br>
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+    <p>
+      <strong>Name:</strong>
+      <%= @user.name %>
+    </p>
 
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
+    <p>
+      <strong>Email:</strong>
+      <%= @user.email %>
+    </p>
 
-<p>
-  <strong>Mob no:</strong>
-  <%= @user.mob_no %>
-</p>
+    <p>
+      <strong>Password:</strong>
+      <%= @user.password %>
+    </p>
 
-<p>
-  <strong>Constituency:</strong>
-  <%= @user.constituency %>
-</p>
+    <p>
+      <strong>Mob no:</strong>
+      <%= @user.mob_no %>
+    </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+    <p>
+      <strong>Constituency:</strong>
+      <%= @user.constituency %>
+    </p>
+
+    <%= link_to 'Edit', edit_user_path(@user) %> |
+    <%= link_to 'Back', users_path %>
+
+
+<% else %>
+    <%=  render :file => 'public/404.html', :status => :not_found, :layout => false   %>
+<% end %>
+
