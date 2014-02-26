@@ -31,6 +31,8 @@ One::Application.routes.draw do
   get '/signout', :to => 'sessions#destroy', :via => :delete
   get '/about' ,  :to => 'static#about'
   get '/contact' ,  :to => 'static#contact'
+  get '/fblogin', :to => 'fb#login'
+  get '/fb_redirect', :to => 'fb#redirect'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
