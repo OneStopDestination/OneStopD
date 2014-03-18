@@ -40,7 +40,12 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
     respond_to do |format|
-      if @user.update(user_params)
+       @user.email    = params[:user][:email]
+       @user.mob_no   = params[:user][:mob_no]
+       @user.password = params[:user][:password]
+       @user.password_confirmation = params[:user][:password_confirmation]
+       if @user.save!
+        puts("User updated++++++++++++++++++")
         format.html { redirect_to root_path, notice: 'Details updated.Please login with your new credentials' }
         format.json { head :no_content }
       else

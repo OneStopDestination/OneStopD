@@ -7,7 +7,14 @@ class SessionsController < ApplicationController
   def create
     @user = User.find_by_email(params[:session][:email].to_s.downcase)
     if @user && @user.email =~ /default(.*)default.com/
-      render 'users/edit'
+      if @user.authenticate(params[:session][:password])
+        @update_through_controller = 1
+        render 'users/edit'
+      else
+        flash.now[:error] = "Invalid email/password combination"
+        render 'new'
+      end
+
     else
       if @user && @user.authenticate(params[:session][:password])
         sign_in @user

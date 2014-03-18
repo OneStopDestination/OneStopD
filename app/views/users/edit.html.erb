@@ -1,12 +1,12 @@
-<% if signed_in? &&  current_user.email == "nationsevoice.acct@gmail.com" %>
+<% if @update_through_controller || signed_in? && current_user.id==@user.id  || signed_in? && current_user.email == "nationsevoice.acct@gmail.com" %>
     <section class="center-page offset5 autoTextHeight signup" style="margin-top: 100px">
       <div class=" row offset1 ">
         <h1 style="margin-bottom: 30px">Update details</h1>
+        <% @update_through_controller=0 %>
         <%= render 'users/form' %>
       </div>
     </section>
-    <%= link_to 'Show', @user %> |
-    <%= link_to 'Back', users_path %>
+
 <% else %>
     <%=  render :file => 'public/404.html', :status => :not_found, :layout => false   %>
 <% end %>
