@@ -9,13 +9,13 @@ module UsersHelper
     return User.find(id=uid).name
   end
 
-  def has_resolve_permissions(uid)
-    return !Profile.find_by_user_id(uid).nil?
+  def has_resolve_permissions(email)
+    return !Profile.find_by_user_id(email).nil?
     cid = Constituency.find_by_name(cname)
     Profile.find_by_constituency_id_and_user_id(constituency_id=cid,user_id=uid)
   end
 
   def profile_for_user(cuser)
-    return Profile.find_by_user_id(cuser.id)
+    return Profile.find_by_user_id(cuser.email)
   end
 end

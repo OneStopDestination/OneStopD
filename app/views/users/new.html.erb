@@ -1,16 +1,4 @@
-<script>
-    $(document).ready(function(){
-        $('#post_constituency_name').autocomplete({source: "/ajax/constituencies"}).data("ui-autocomplete")._renderItem = function( ul, item ) {
-            var inner_html = '<div class="list_item_container"><div class="label">' + item.label + '</div></div>';
-            return $( "<li></li>" )
-                    .data( "item.autocomplete", item )
-                    .append(inner_html)
-                    .appendTo( ul );
-        };
 
-    });
-
-</script>
 <% provide(:title, 'Sign up') %>
 <p style="float: right ; margin-right: 10px"></p>
 
@@ -19,22 +7,22 @@
     <h1 style="margin-bottom: 30px">Sign Up</h1>
     <%= form_for(@user) do |f| %>
         <%= render 'shared/error_messages', :object => f.object %>
-        <%= f.label :name ,:class => "required" %>
+        <%= f.label :name ,:class => "required1" %>
         <%= f.text_field :name %>
 
-        <%= f.label :email ,:class => "required" %>
+        <%= f.label :email ,:class => "required1" %>
         <%= f.text_field :email %>
 
-        <%= f.label :Constituency ,:class => "required" %>
-        <%= f.text_field :constituency , :id => "post_constituency_name" %>
+        <%= f.label :Constituency ,:class => "required1" %>
+        <%= f.text_field :constituency , :id => "post_constituency_name"  %>
 
         <%= f.label :mob_no %>
         <%= f.text_field :mob_no %>
 
-        <%= f.label :password ,:class => "required" %>
+        <%= f.label :password ,:class => "required1" %>
         <%= f.password_field :password %>
 
-        <%= f.label :password_confirmation, "Confirmation",:class => "required" %>
+        <%= f.label :password_confirmation, "Confirmation",:class => "required1" %>
         <%= f.password_field :password_confirmation %>
         <br><br>
         <%= f.submit "Create My Account", :class => "btn btn-large btn-primary" %>
@@ -43,6 +31,9 @@
 
   </div>
 </section>
+<script>
 
+
+</script>
 
 

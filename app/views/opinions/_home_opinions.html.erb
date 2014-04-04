@@ -1,0 +1,6 @@
+<% if signed_in? %>
+    <div id="opinon_poll_result">
+       <% @opinion_feed_items = opinions_for_cons(current_user)  %>
+       <%= render 'shared/opinion_feed' %>
+     </div>
+<% end %>

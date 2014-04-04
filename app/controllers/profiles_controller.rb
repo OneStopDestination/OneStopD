@@ -12,11 +12,16 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
-    @problem = Profile.find(params[:id]).problems.build(params[:problem])
-    #@problem = Problem.find(cid=Profile.find(id=1).constituency_id)
-    #@problem_feed_items = @
-    @problem_feed_items =  Profile.find(params[:id]).feed
-    puts(@problem_feed_items,"======================")
+      @profile = Profile.find(params[:id])
+      @problem = Profile.find(params[:id]).problems.build(params[:problem])
+      @opinion = Profile.find(params[:id]).opinions.build(params[:opinion])
+      @opinionpoll = Opinionpoll.new(:constituency_id => @profile.constituency_id)
+      #@problem = Problem.find(cid=Profile.find(id=1).constituency_id)
+      #@problem_feed_items = @
+      @problem_feed_items =  Profile.find(params[:id]).feed
+      @opinion_feed_items =  Profile.find(params[:id]).opinions_feed
+      puts(@problem_feed_items,"======================")
+
   end
 
   # GET /profiles/new

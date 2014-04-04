@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyString
+  user_id_created: 1
+  user_id_voted: 1
+  option_selected: MyString
+  options: MyString
+  constituency_id: 1
+
+two:
+  description: MyString
+  user_id_created: 1
+  user_id_voted: 1
+  option_selected: MyString
+  options: MyString
+  constituency_id: 1

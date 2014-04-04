@@ -28,8 +28,9 @@ class OpinionsController < ApplicationController
 
     respond_to do |format|
       if @opinion.save
-        format.html { redirect_to @opinion, notice: 'Opinion was successfully created.' }
+        format.html { redirect_to(:back) }
         format.json { render action: 'show', status: :created, location: @opinion }
+        format.js
       else
         format.html { render action: 'new' }
         format.json { render json: @opinion.errors, status: :unprocessable_entity }
@@ -69,6 +70,6 @@ class OpinionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def opinion_params
-      params.require(:opinion).permit(:opinion, :pid)
+      params.require(:opinion).permit(:opinion, :user_id_created,:options,:constituency_id)
     end
 end

@@ -1,0 +1,7 @@
+<% @options_avail = Opinion.find(@opinionpoll.opinion_id).options.split(",") %>
+<% @options_avail.each do |each_option| %>
+     <%= each_option  %> : <%= Opinionpoll.where("opinion_id=? AND option_selected=?" ,@opinionpoll.opinion_id,each_option).count  %>
+     <br>
+<% end %>
+All votes <%=  Opinionpoll.find_all_by_opinion_id(@opinionpoll.opinion_id).count%>
+<br><br>

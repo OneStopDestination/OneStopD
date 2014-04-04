@@ -1,0 +1,12 @@
+<% if signed_in? %>
+<section class="post_form" id="post_form">
+  <hr>
+  <h3>Report a Problem</h3><br>
+  <%= render :partial => 'problems/form' %>
+
+</section>
+
+<section class="problems_feed" style="margin-right: 17%">
+  <%= render :partial => 'shared/problem_feed' %>
+</section>
+<% end %>

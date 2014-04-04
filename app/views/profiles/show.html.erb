@@ -15,27 +15,57 @@
         <p class="wrapped-text" style="width: 75%;text-align:justify;"><strong></br>&nbsp;&nbsp;More details&nbsp;:&nbsp;</strong><%= auto_link( raw @profile.additional_details.html_safe) %></p>
 
       </div>
-
-
-    <section class="post_form" id="post_form">
-      <hr>
-      <h3>Report a Problem</h3><br>
-      <%= render :partial => 'problems/form' %>
-
     </section>
+      <div class="container">
+        <div id="tabs">
+          <ul>
 
-    <section class="problems_feed" style="margin-right: 17%">
-      <%= render :partial => 'shared/problem_feed' %>
-    </section>
-    </section>
+            <li><a href="#tabs-1">Opinion Polls</a></li>
+            <li><a href="#tabs-2">Problems Reported</a></li>
+
+          </ul>
+
+          <div id="tabs-1">
+            <%= render :partial => 'opinions/opinion_on_profile' %>
+
+          </div>
+          <div id="tabs-2">
+            two
+          </div>
+
+        </div>
+      </div>
     <% if current_user.email == "nationsevoice.acct@gmail.com" %>
     <%= link_to 'Edit', edit_profile_path(@profile) %> |
     <%= link_to 'Back', profiles_path %>
     <% end %>
 <% else %>
-    redirect_to(root_path)
+    <script type="text/javascript">
+        window.location.href="/signin"  // put your correct path in a string here
+    </script>
 <% end %>
 
+<script>
+    $(document).ready(function(){
+        $("#tabs").tabs({heightStyle: "content"});
+        $('#tabs ul li').click('tabsselect', function (event, ui) {
+            var selectedTab = $("#tabs").tabs('option','active');
+
+            if(selectedTab == 0) {
+                $('#tabs-1').html('<%= escape_javascript(render(:partial => 'opinions/opinion_on_profile')).html_safe %>')
+                $('#tabs-2').html(' ')
+
+            }
+            else if(selectedTab == 1) {
+                $('#tabs-2').html('<%= escape_javascript(render(:partial => 'problems/problem_on_profile')).html_safe %>')
+                $('#tabs-1').html(' ')
+            }
+
+        });
+
+
+    });
+</script>
 
 
 

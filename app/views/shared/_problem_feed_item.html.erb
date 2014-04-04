@@ -22,7 +22,7 @@
         <%= "Resolution : " + problem_feed_item.resolution %>
       <% end %>
     </div>
-    <% if (problem_feed_item.resolution).nil? && has_resolve_permissions(current_user.id) %>
+    <% if (problem_feed_item.resolution).nil? && has_resolve_permissions(current_user.email) %>
         <%= form_for(problem_feed_item ,:authenticity_token => true ,:remote => :true) do |f| %>
             <%= f.text_area :resolution, :placeholder => "Post the resolution.." %>
             <%= f.hidden_field :user_id_resolved, :value => current_user.id %>

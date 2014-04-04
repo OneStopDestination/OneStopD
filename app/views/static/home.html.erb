@@ -10,6 +10,7 @@
         <ul>
           <li><a href="#tabs-1">Profiles of Politicians</a></li>
           <li><a href="#tabs-2">Problems Reported</a></li>
+          <li><a href="#tabs-3">Opinions polls</a></li>
 
         </ul>
         <div id="tabs-1">
@@ -17,6 +18,9 @@
         </div>
         <div id="tabs-2">
           two
+        </div>
+        <div id="tabs-3">
+          three
         </div>
 
       </div>
@@ -44,18 +48,20 @@
             if(selectedTab == 0) {
                 $('#tabs-1').html('<%= escape_javascript(render(:partial => 'profiles/index1')).html_safe %>')
                 $('#tabs-2').html(' ')
-
+                $('#tabs-3').html(' ')
             }
-            else {
+            else if(selectedTab == 1) {
                 $('#tabs-2').html('<%= escape_javascript(render(:partial => 'problems/home_problems')).html_safe %>')
                 $('#tabs-1').html(' ')
+                $('#tabs-3').html(' ')
+            }
+            else {
+                $('#tabs-3').html('<%= escape_javascript(render(:partial => 'opinions/home_opinions')).html_safe %>')
+                $('#tabs-1').html(' ')
+                $('#tabs-2').html(' ')
             }
         });
 
 
     });
-
-
-
-
 </script>

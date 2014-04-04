@@ -1,0 +1,26 @@
+<strong><%= find_user_by_id(opinion_feed_item.user_id_created) %> </strong>
+<br>
+&nbsp;&nbsp;<%= opinion_feed_item.opinion %>
+<br>
+Posted <%= time_ago_in_words(opinion_feed_item.created_at) %> ago.
+<br>
+<% @opinionpoll = Opinionpoll.new(:opinion_id=>opinion_feed_item.id)  %>
+
+<% if voted(current_user.id,opinion_feed_item.id) %>
+<% @options_avail = opinion_feed_item.options.split(",") %>
+
+<div id="<%= "opinionpoll_" + opinion_feed_item.id.to_s %>" >
+<%= simple_form_for(@opinionpoll, :remote => true ) do |f| %>
+
+    <%= f.input :option_selected,:collection =>@options_avail, as: :radio_buttons  ,:class=>"simple_form" ,:label=>""%>
+    <%= f.hidden_field :opinion_id, :value => opinion_feed_item.id %>
+    <%= f.hidden_field :user_id_voted, :value => current_user.id %>
+    <%= f.submit "Vote" ,:class => "btn btn-primary" %>
+<% end %>
+</div>
+<br>
+<% else %>
+    <%= render 'opinionpolls/show_poll_results' %>
+<% end %>
+
+

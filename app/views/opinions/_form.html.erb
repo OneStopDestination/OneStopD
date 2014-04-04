@@ -1,3 +1,4 @@
+<% if signed_in? %>
 <%= form_for(@opinion) do |f| %>
   <% if @opinion.errors.any? %>
     <div id="error_explanation">
@@ -16,10 +17,14 @@
     <%= f.text_area :opinion %>
   </div>
   <div class="field">
-    <%= f.label :pid %><br>
-    <%= f.number_field :pid %>
+    <%= f.label :'Options(in comma separated list)'%><br>
+    <%= f.text_field :options %>
   </div>
-  <div class="actions">
+    <%= f.hidden_field :user_id_created, :value => current_user.id %>
+    <%= f.hidden_field :constituency_id, :value => @profile.constituency_id %>
+
+    <div class="actions">
     <%= f.submit %>
   </div>
+<% end %>
 <% end %>
