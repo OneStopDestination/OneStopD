@@ -1,7 +1,8 @@
 <% @options_avail = Opinion.find(@opinionpoll.opinion_id).options.split(",") %>
+<% @all_votes = Opinionpoll.find_all_by_opinion_id(@opinionpoll.opinion_id).count %>
 <% @options_avail.each do |each_option| %>
-     <%= each_option  %> : <%= Opinionpoll.where("opinion_id=? AND option_selected=?" ,@opinionpoll.opinion_id,each_option).count  %>
+     <span style="float: left;"><%= each_option  %></span> &nbsp; : <%= (Opinionpoll.where("opinion_id=? AND option_selected=?" ,@opinionpoll.opinion_id,each_option).count)/@all_votes*100  %>%
      <br>
 <% end %>
-All votes <%=  Opinionpoll.find_all_by_opinion_id(@opinionpoll.opinion_id).count%>
+
 <br><br>
