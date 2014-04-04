@@ -1,6 +1,9 @@
 <% if signed_in? %>
     <h3>Opinion Polls</h3>
     <hr>
-    <%= render :partial => "opinions/form" %>
+    <% profile_data =  profile_for_user(current_user) %>
+    <% if profile_data  %>
+        <%= render :partial => "opinions/form" %>
+    <% end %>
     <%= render :partial => "shared/opinion_feed" %>
 <% end %>
