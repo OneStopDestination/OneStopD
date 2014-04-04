@@ -38,6 +38,13 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 gem 'rails3-jquery-autocomplete'
 gem 'yaml_db' , github: 'jetthoughts/yaml_db', ref: 'fb4b6bd7e12de3cffa93e0a298a1e5253d7e92ba'
 gem 'rails_autolink'
+gem  'httparty'
+gem  'em-http-request'
+gem  'rest-client'
+gem  'fbgraph'
+gem 'certified'
+
+gem "simple_form"
 # Use unicorn as the app server
 # gem 'unicorn'
 
