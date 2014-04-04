@@ -1,4 +1,7 @@
 <% if signed_in? %>
+    <h1 style="display: inline">Opinion Polls</h1>
+    <span style="font-size:0.5em;float:right"><%= link_to "Create a poll", profile_path(@politician_profile) ,:class => "btn btn-large btn-primary"  %></span>
+    <hr>
     <div id="opinon_poll_result">
        <% @opinion_feed_items = opinions_for_cons(current_user)  %>
        <%= render 'shared/opinion_feed' %>
