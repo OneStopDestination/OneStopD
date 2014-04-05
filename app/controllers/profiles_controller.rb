@@ -37,9 +37,8 @@ class ProfilesController < ApplicationController
   # POST /profiles.json
   def create
     @profile = Profile.new(profile_params)
-
     respond_to do |format|
-      if @profile.save
+      if !@profile.constituency_id.nil? && !@profile.user_id.nil? && @profile.save
         format.html { redirect_to @profile, notice: 'Profile was successfully created.' }
         format.json { render action: 'show', status: :created, location: @profile }
       else

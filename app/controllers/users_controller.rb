@@ -44,8 +44,16 @@ class UsersController < ApplicationController
        @user.mob_no   = params[:user][:mob_no]
        @user.password = params[:user][:password]
        @user.password_confirmation = params[:user][:password_confirmation]
+
        if @user.save!
         puts("User updated++++++++++++++++++")
+        #Now updating the profile of the politician with proper mail id
+        #puts("updating user id in profile--------------")
+        puts ($old_email_id)
+        @update_profile = Profile.find_by_user_id($old_email_id)
+        #puts("here s the profile")
+        #puts(@update_profile)
+        @update_profile.update_attribute(:user_id ,@user.email)
         format.html { redirect_to root_path, notice: 'Details updated.Please login with your new credentials' }
         format.json { head :no_content }
       else

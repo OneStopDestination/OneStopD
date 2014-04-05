@@ -9,6 +9,9 @@ class SessionsController < ApplicationController
     if @user && @user.email =~ /default(.*)default.com/
       if @user.authenticate(params[:session][:password])
         @update_through_controller = 1
+        $old_email_id = params[:session][:email].to_s.downcase
+        #puts("i have old email id--------------------------------------------------------")
+        #puts($old_email_id)
         render 'users/edit'
       else
         flash.now[:error] = "Invalid email/password combination"
