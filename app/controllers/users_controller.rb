@@ -25,8 +25,10 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
+    if(@user.fbflag != true)
+      @user.fbflag = false
+    end
     print(@user)
-
       if @user.save
         sign_in @user
         redirect_to(root_path)
@@ -81,6 +83,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email, :password_digest,:password, :mob_no, :password_confirmation, :password_reset_token, :password_reset_sent_at , :remember_token ,:id,:constituency)
+      params.require(:user).permit(:name, :email, :password_digest,:password, :mob_no, :password_confirmation, :password_reset_token, :password_reset_sent_at , :remember_token ,:id,:constituency,:fbflag)
     end
 end

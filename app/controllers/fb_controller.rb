@@ -22,6 +22,7 @@ class FbController < ApplicationController
       @user = User.new
       @user.name = user_info.name
       @user.email = user_info.email
+      @user.fbflag = 1
       render 'users/new'
     end
 
@@ -34,7 +35,7 @@ class FbController < ApplicationController
 
   private
   def setup_client
-    @client = FBGraph::Client.new(:client_id => '616065015113813',:secret_id =>'94fe2bd9316d137bbc64566031a31819')
+    @client = FBGraph::Client.new(:client_id => '313006152185371',:secret_id =>'92ff4e8f10d4b31dfdc6afb6a47f7a35')
   end
 
 end

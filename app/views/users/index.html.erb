@@ -9,7 +9,7 @@
         <th>Password</th>
         <th>Mob no</th>
         <th>Constituency</th>
-        <th></th>
+        <th>Fb login</th>
         <th></th>
         <th></th>
       </tr>
@@ -23,6 +23,7 @@
             <td><%= user.password %></td>
             <td><%= user.mob_no %></td>
             <td><%= user.constituency %></td>
+            <td><%= user.fbflag %></td>
             <td><%= link_to 'Show', user %></td>
             <td><%= link_to 'Edit', edit_user_path(user) %></td>
             <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
