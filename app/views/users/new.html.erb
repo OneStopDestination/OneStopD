@@ -13,9 +13,6 @@
         <%= f.label :email ,:class => "required1" %>
         <%= f.text_field :email %>
 
-        <%= f.label :Constituency ,:class => "required1" %>
-        <%= f.text_field :constituency , :id => "post_constituency_name"  %>
-
         <%= f.label :mob_no %>
         <%= f.text_field :mob_no %>
 
@@ -25,16 +22,40 @@
         <%= f.label :password_confirmation, "Confirmation",:class => "required1" %>
         <%= f.password_field :password_confirmation %>
 
+        <% @constituency_list = get_constituency() %>
+
+        <%= f.label :Constituency ,:class => "required1" %>
+
+        <% @constituency_list.sort!  %>
+        <% @constituency_list.push("Not Available") %>
+        <%= select_tag :constituency , options_for_select(@constituency_list,"gen"), {:multiple => false ,:include_blank => true} %> </p>
+        <div id="hide" style="visibility: hidden ">Please type your constituency name<%=  f.text_field :constituency ,:id=>"disabled" %></div>
+
         <br><br>
         <%= f.submit "Create My Account", :class => "btn btn-large btn-primary" %>
         <%= f.hidden_field :fbflag  , :value => @user.fbflag %>
+
      <% end %>
 
   </div>
 </section>
+
 <script>
+
+  $('select#constituency').change(function(){
+      var1 =  $('#constituency').val() ;
+      if (var1 === 'Not Available')
+      {
+          $('#hide').css("visibility","visible");
+          $('#disabled').val("");
+      }
+      else {
+          $('#hide').css("visibility","hidden");
+          $('#disabled').val(var1);
+
+      }
+
+  });
 
 
 </script>
-
-
