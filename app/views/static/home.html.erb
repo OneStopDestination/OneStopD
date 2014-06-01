@@ -1,6 +1,9 @@
 <title>OneStopD</title>
 <section style="margin-top: 40px">
-    <h2 style="text-align: center;font-style:oblique ; text-shadow: 2px 2px 2px #808080 ;font-family:Monospace,'Lucida Console'">Get to know about your politician <br>Report a problem in your constituency <br>Politician will resolve it <br>Leave your comments on the resolution <br>Discuss on current topics and participate in opinion polls </h2>
+    <h2 style="text-align: center;font-style:oblique ; text-shadow: 2px 2px 2px #808080 ;font-family:Monospace,'Lucida Console'">Get to know your politician <br>Report problems in your constituency </h2>
+    <br>
+  <!-- Feedzilla Widget BEGIN -->
+
 </section>
 
 <% if signed_in? %>
@@ -8,7 +11,7 @@
 
       <div id="tabs">
         <ul>
-          <li><a href="#tabs-1">Profiles of Politicians</a></li>
+          <li class="new"><a href="#tabs-1">Profiles of Politicians</a></li>
           <li><a href="#tabs-2">Problems Reported</a></li>
           <li><a href="#tabs-3">Opinions polls</a></li>
 
@@ -29,13 +32,53 @@
 
 
 <% else %>
+    <div class="fbfeed" style="margin-left:5%;display: inline; float: left;width:28%;"><script type="text/javascript" src="http://output89.rssinclude.com/output?type=js&amp;id=884674&amp;hash=3cc818d1f0c599dba28aacd24678c644"></script> </div>
+
+    <div class="slide_show" style="width:30%;display: inline; float: left;padding-left: 20px ">
     <ul class="bxslider">
       <li><img src="/assets/home_1.jpg" /></li>
       <li><img src="/assets/home_2.jpg" /></li>
       <li><img src="/assets/home_3.jpg" /></li>
 
     </ul>
+    </div>
+
+    <div class="newsfeed" style="width:20%;display: inline; float: left">
+      <!-- Feedzilla Widget BEGIN -->
+
+      <div class="feedzilla-news-widget feedzilla-9480778600554913" style="width:250px; padding-left: 20px; text-align: center; font-size: 11px; border: 0;">
+        <script type="text/javascript" src="http://widgets.feedzilla.com/news/iframe/js/widget.js"></script>
+        <script type="text/javascript">
+            new FEEDZILLA.Widget({
+                style: 'slide-top-to-bottom',
+                culture_code: 'en_in',
+                c: '1059',
+                sc: '26268',
+                headerBackgroundColor: '#574c3b',
+                footerBackgroundColor: '#b8b2a7',
+                title: 'Politics',
+                caption: 'India',
+                order: 'date',
+                count: '50',
+                w: '380',
+                h: '633',
+                timestamp: 'true',
+                scrollbar: 'false',
+                theme: 'ui-lightness',
+                className: 'feedzilla-9480778600554913'
+            });
+        </script><br />
+
+      </div>
+
+      <!-- Feedzilla Widget END -->
+
+    </div>
+
+
+
 <% end %>
+
 
 
   </div>

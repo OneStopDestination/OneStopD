@@ -19,11 +19,12 @@
 //= require jquery.ui.tabs
 //= require bootstrap
 
+
 $(document).ready(function(){
     $('.bxslider').bxSlider( {
+        slideWidth:600,
         auto: true,
-        autoControls: true,
-        slideWidth:500
+        autoControls: true
     });
 
     $('#slider-next').click(function(){
@@ -38,4 +39,5 @@ $(document).ready(function(){
             .append(inner_html)
             .appendTo( ul );
     };
+
 });
