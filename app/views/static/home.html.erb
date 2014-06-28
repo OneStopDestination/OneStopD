@@ -1,6 +1,6 @@
 <title>OneStopD</title>
 <section style="margin-top: 40px">
-    <h2 style="text-align: center;font-style:oblique ; text-shadow: 2px 2px 2px #808080 ;font-family:Monospace,'Lucida Console'">Get to know your politician <br>Report problems in your constituency </h2>
+ <!--   <h2 style="text-align: center;font-style:oblique ; text-shadow: 2px 2px 2px #808080 ;font-family:Monospace,'Lucida Console'">Get to know your politician <br>Report problems in your constituency </h2>
     <br>
   <!-- Feedzilla Widget BEGIN -->
 
@@ -32,9 +32,31 @@
 
 
 <% else %>
-    <div class="fbfeed" style="margin-left:5%;display: inline; float: left;width:28%;"><script type="text/javascript" src="http://output89.rssinclude.com/output?type=js&amp;id=884674&amp;hash=3cc818d1f0c599dba28aacd24678c644"></script> </div>
 
-    <div class="slide_show" style="width:30%;display: inline; float: left;padding-left: 20px ">
+    <section class="part1">
+      <div style="text-align: center">
+        <%= image_tag '/assets/logo.jpg' , size: "300x400",class: "logo_center" %>
+        <br>  <br> <br>
+        <p id="title" style="font-size: 60px;font-style:oblique ; text-shadow: 2px 2px 2px #000000 ;text-emphasis-color: white">NATION'S E VOICE</p>   <br>    <br>
+        <p style="font-size: 30px">We get your voice heard</p>
+        <br>    <br>  <br> <br> <br>
+        <p style="font-size: 20px;padding-left: 30px;padding-right: 30px;line-height: 2">
+          Nationsevoice.com is a platform where people can directly report their issues to representatives and bureaucrats.  <br>
+          Representatives and bureaucrats post their resolutions jotting down the steps taken by them to solve the reported problems.
+          <br>In this way,  our mission is to bridge the existing gap between people and their representatives.
+        </p>
+      </div>
+    </section>
+    <br> <br> <br> <br> <br><br><br><br> <br><br> <br>
+    <div id="what"> <p style="font-size: 60px;text-align: center; text-shadow: 2px 2px 2px #000000 ;"> What we do ? </p> </div>
+    <br> <br>
+
+    <p style="font-size: 30px;text-align: center;">
+      Receive your problems , notify the politicians and get it resolved
+    </p>
+    <br>
+
+    <div class="slide_show" style="text-align: center">
     <ul class="bxslider">
       <li><img src="/assets/home_1.jpg" /></li>
       <li><img src="/assets/home_2.jpg" /></li>
@@ -43,37 +65,77 @@
     </ul>
     </div>
 
-    <div class="newsfeed" style="width:20%;display: inline; float: left">
-      <!-- Feedzilla Widget BEGIN -->
+    <br><br>
+    <p style="font-size: 60px;text-align: center; text-shadow: 2px 2px 2px #000000 ;"> How do we do ? </p>
+    <br> <br> <br> <br>
 
-      <div class="feedzilla-news-widget feedzilla-9480778600554913" style="width:250px; padding-left: 20px; text-align: center; font-size: 11px; border: 0;">
-        <script type="text/javascript" src="http://widgets.feedzilla.com/news/iframe/js/widget.js"></script>
-        <script type="text/javascript">
-            new FEEDZILLA.Widget({
-                style: 'slide-top-to-bottom',
-                culture_code: 'en_in',
-                c: '1059',
-                sc: '26268',
-                headerBackgroundColor: '#574c3b',
-                footerBackgroundColor: '#b8b2a7',
-                title: 'Politics',
-                caption: 'India',
-                order: 'date',
-                count: '50',
-                w: '380',
-                h: '633',
-                timestamp: 'true',
-                scrollbar: 'false',
-                theme: 'ui-lightness',
-                className: 'feedzilla-9480778600554913'
-            });
-        </script><br />
+    <section id="part3" style="text-align: center;padding-left: 10%">
+         <div id="how_1" style="float: left;width: 20%;display: inline;">
+           <%= image_tag '/assets/GetPoliticians.png' , size: "300x300" %>
+           <br>  <br>  <br>
+           <p style="font-size: 25px;line-height: 2;font-weight: bold">Get Politicians</p>
 
+           <p style="text-align: justify;padding-left: 5px;padding-right: 5px;font-size: 15px;">
+             Get politicians of different constituencies on board and create profiles for them
+             where they can read the reported problems and take steps to resolve them.
+           </p>
+         </div>
+
+         <div id="how_2" style="float: left;width: 20%;display: inline;margin-left: 45px">
+           <%= image_tag '/assets/problems.jpg' , size: "300x200" %>     <br><br><br>
+           <p style="font-size: 25px;line-height: 2;font-weight: bold">Receive problems</p>
+
+           <p style="text-align: justify;padding-left: 5px;padding-right: 5px;font-size: 15px;">
+             Get problems from the people and make them available on politicians profile pages.
+             In addition to reporting their problems, people can comment on other reported problems.
+           </p>
+         </div>
+         <div id="how_3" style="float: left;width: 20%;display: inline;margin-left: 45px">
+           <%= image_tag '/assets/NotifyPoliticians.png' , size: "300x300" %>    <br>  <br>  <br>
+           <p style="font-size: 25px;line-height: 2;font-weight: bold">Notify politicians</p>
+
+           <p style="text-align: justify;padding-left: 5px;padding-right: 5px;font-size: 15px;">
+             Politicians will be notified of the problems reported in their constituencies along with the details of the people reporting the problems.
+           </p>
+         </div>
+         <div id="how_4" style="float: left;width: 20%;display: inline;margin-left: 45px">
+           <%= image_tag '/assets/rating1.jpg' , size: "320x300" %>   <br><br><br>
+           <p style="font-size: 25px;line-height: 2;font-weight: bold">Rate resolution</p>
+
+           <p style="text-align: justify;padding-left: 5px;padding-right: 5px;font-size: 15px;">
+             The users can rate the resolution by commenting about their level of satisfaction on the resolution give by their politician.
+           </p>
+         </div>
+
+    </section>
+    <br> <br> <br> <br> <br>
+    <p style="font-size: 60px;text-align: center; text-shadow: 2px 2px 2px #000000 ;"> Some More </p>
+    <br> <br> <br>
+
+    <section id="part4" style="text-align: center;padding-left: 25%">
+      <div id="how_1" style="float: left;width: 30%;display: inline;">
+        <%= image_tag '/assets/KnowYourPoliticians.png' , size: "250x300" %>
+        <p style="font-size: 25px;line-height: 2;font-weight: bold">Know your Politician</p>
+
+        <p style="text-align: justify;padding-left: 5px;padding-right: 5px;font-size: 15px;">
+          Get to know more about your politicians like their educational background, manifesto, family background etc.
+          If you don't find profile of your politician, don't worry!!, we are here to create new profile upon receiving your request for it.
+        </p>
       </div>
 
-      <!-- Feedzilla Widget END -->
+      <div id="how_2" style="float: left;width: 30%;display: inline;margin-left: 15%">
+        <%= image_tag '/assets/OpinionPolls.png' , size: "270x300" %>
+        <p style="font-size: 25px;line-height: 2;font-weight: bold">Opinion Polls</p>
 
-    </div>
+        <p style="text-align: justify;padding-left: 5px;padding-right: 5px;font-size: 15px;">
+          Do you ever feel like your voice is not being heard on important project in your constituency? Here is an opportunity for you!!
+          Raise your voice by participating in opinion polls on critical questions relating to your constituency.
+        </p>
+      </div>
+
+    </section>
+
+    <br> <br>
 
 
 

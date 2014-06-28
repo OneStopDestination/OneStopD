@@ -22,7 +22,7 @@
 
 $(document).ready(function(){
     $('.bxslider').bxSlider( {
-        slideWidth:600,
+        slideWidth:750,
         auto: true,
         autoControls: true
     });
@@ -31,6 +31,8 @@ $(document).ready(function(){
         slider.goToNextSlide();
         return false;
     });
+
+    $('#title').css('visibility', 'visible').animate({opacity: 1.0}, 2000);
 
     $('#post_user_name').autocomplete({source: "/ajax/users"}).data("ui-autocomplete")._renderItem = function( ul, item ) {
         var inner_html = '<a href = ' + item.link +'><div class="list_item_container"><div class="label">' + item.label + '</div></div></a>';
