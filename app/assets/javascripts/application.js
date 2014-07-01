@@ -33,6 +33,11 @@ $(document).ready(function(){
     });
 
     $('#title').css('visibility', 'visible').animate({opacity: 1.0}, 2000);
+    $('#title').animate({fontSize:"+=5"});
+
+
+    $('#brief').css('visibility', 'visible').animate({opacity: 2.0}, 2000);
+    $('#subtitle1').animate({fontSize:"+=12"});
 
     $('#post_user_name').autocomplete({source: "/ajax/users"}).data("ui-autocomplete")._renderItem = function( ul, item ) {
         var inner_html = '<a href = ' + item.link +'><div class="list_item_container"><div class="label">' + item.label + '</div></div></a>';

@@ -95,7 +95,7 @@ footer small {
 
 html {
   overflow-y: scroll;
- overflow-x: hidden
+  overflow-x: hidden;
 }
 
 body {
@@ -442,4 +442,37 @@ select{
 #title {
   visibility: hidden;
   opacity: 0.0;
+}
+
+#brief {
+  visibility: hidden;
+  opacity: 0.0;
+}
+
+#how_1{
+  visibility: hidden;
+
+}
+
+#how_2{
+  visibility: hidden;
+
+}
+#how_3{
+  visibility: hidden;
+
+}
+#how_4{
+  visibility: hidden;
+
+}
+
+#how_5{
+  visibility: hidden;
+
+}
+
+#how_6{
+  visibility: hidden;
+
 }

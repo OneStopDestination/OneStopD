@@ -37,10 +37,11 @@
       <div style="text-align: center">
         <%= image_tag '/assets/logo.jpg' , size: "300x400",class: "logo_center" %>
         <br>  <br> <br>
-        <p id="title" style="font-size: 60px;font-style:oblique ; text-shadow: 2px 2px 2px #000000 ;text-emphasis-color: white">NATION'S E VOICE</p>   <br>    <br>
-        <p style="font-size: 30px">We get your voice heard</p>
-        <br>    <br>  <br> <br> <br>
-        <p style="font-size: 20px;padding-left: 30px;padding-right: 30px;line-height: 2">
+        <p id="title" style="font-size: 50px;font-style:oblique ; text-shadow: 2px 2px 2px #000000 ;text-emphasis-color: white">NATION'S E VOICE</p>   <br>    <br>
+        <br> <br>
+        <p id="subtitle1" style="font-size: 20px">We get your voice heard</p>
+        <br>    <br>  <br>
+        <p id="brief" style="font-size: 20px;padding-left: 30px;padding-right: 30px;line-height: 2">
           Nationsevoice.com is a platform where people can directly report their issues to representatives and bureaucrats.  <br>
           Representatives and bureaucrats post their resolutions jotting down the steps taken by them to solve the reported problems.
           <br>In this way,  our mission is to bridge the existing gap between people and their representatives.
@@ -69,11 +70,11 @@
     <p style="font-size: 60px;text-align: center; text-shadow: 2px 2px 2px #000000 ;"> How do we do ? </p>
     <br> <br> <br> <br>
 
-    <section id="part3" style="text-align: center;padding-left: 10%">
+    <section id="part3" style="text-align: center">
          <div id="how_1" style="float: left;width: 20%;display: inline;">
            <%= image_tag '/assets/GetPoliticians.png' , size: "300x300" %>
            <br>  <br>  <br>
-           <p style="font-size: 25px;line-height: 2;font-weight: bold">Get Politicians</p>
+         <p style="font-size: 25px;line-height: 2;font-weight: bold;margin-left: 4%">Get Politicians</p>
 
            <p style="text-align: justify;padding-left: 5px;padding-right: 5px;font-size: 15px;">
              Get politicians of different constituencies on board and create profiles for them
@@ -81,7 +82,7 @@
            </p>
          </div>
 
-         <div id="how_2" style="float: left;width: 20%;display: inline;margin-left: 45px">
+         <div id="how_2" style="float: left;width: 22%;display: inline;margin-left: 4%">
            <%= image_tag '/assets/problems.jpg' , size: "300x200" %>     <br><br><br>
            <p style="font-size: 25px;line-height: 2;font-weight: bold">Receive problems</p>
 
@@ -90,7 +91,7 @@
              In addition to reporting their problems, people can comment on other reported problems.
            </p>
          </div>
-         <div id="how_3" style="float: left;width: 20%;display: inline;margin-left: 45px">
+         <div id="how_3" style="float: left;width: 20%;display: inline;margin-left: 4%">
            <%= image_tag '/assets/NotifyPoliticians.png' , size: "300x300" %>    <br>  <br>  <br>
            <p style="font-size: 25px;line-height: 2;font-weight: bold">Notify politicians</p>
 
@@ -98,8 +99,8 @@
              Politicians will be notified of the problems reported in their constituencies along with the details of the people reporting the problems.
            </p>
          </div>
-         <div id="how_4" style="float: left;width: 20%;display: inline;margin-left: 45px">
-           <%= image_tag '/assets/rating1.jpg' , size: "320x300" %>   <br><br><br>
+         <div id="how_4" style="float: left;width: 20%;display: inline;margin-left: 4%">
+           <%= image_tag '/assets/rating1.jpg' , size: "300x300" %>   <br><br><br>
            <p style="font-size: 25px;line-height: 2;font-weight: bold">Rate resolution</p>
 
            <p style="text-align: justify;padding-left: 5px;padding-right: 5px;font-size: 15px;">
@@ -113,7 +114,7 @@
     <br> <br> <br>
 
     <section id="part4" style="text-align: center;padding-left: 25%">
-      <div id="how_1" style="float: left;width: 30%;display: inline;">
+      <div id="how_5" style="float: left;width: 35%;display: inline;">
         <%= image_tag '/assets/KnowYourPoliticians.png' , size: "250x300" %>
         <p style="font-size: 25px;line-height: 2;font-weight: bold">Know your Politician</p>
 
@@ -123,7 +124,7 @@
         </p>
       </div>
 
-      <div id="how_2" style="float: left;width: 30%;display: inline;margin-left: 15%">
+      <div id="how_6" style="float: left;width: 30%;display: inline;margin-left: 15%">
         <%= image_tag '/assets/OpinionPolls.png' , size: "270x300" %>
         <p style="font-size: 25px;line-height: 2;font-weight: bold">Opinion Polls</p>
 
@@ -167,6 +168,259 @@
             }
         });
 
+        $(window).trigger('checkInView')
+        //$(Window).trigger('checkInView')
+
+        $('#how_1').css("visibility","hidden");
+        $('#how_2').css("visibility","hidden");
+        $('#how_3').css("visibility","hidden");
+        $('#how_4').css("visibility","hidden");
+
 
     });
+
+
+    $('#how_1').bind('inview', function(e, v, t) {
+        var o = $(this);
+
+        if(o.data('inviewtimer')) {
+            clearTimeout(o.data('inviewtimer'));
+            o.removeData('inviewtimer');
+        }
+
+        if(v) {
+            o.data('inviewtimer', setTimeout(function() {
+                if(t == 'top') {
+                    o.data('seenTop', true);
+                } else if(t == 'bottom') {
+                    o.data('seenBottom', true);
+                } else {
+                    o.data('seenTop', true);
+                    o.data('seenBottom', true);
+                }
+
+                if(o.data('seenTop') && o.data('seenBottom')) {
+                    o.unbind('inview');
+                    // here we will do WHAT WHE NEED (for ex. Call Ajax stats collector)
+                    // ...
+                    $('#how_1').css("visibility","visible");
+
+                }
+            }, 50));
+        }
+    });
+
+    $('#how_2').bind('inview', function(e, v, t) {
+        var o = $(this);
+
+        if(o.data('inviewtimer')) {
+            clearTimeout(o.data('inviewtimer'));
+            o.removeData('inviewtimer');
+        }
+
+        if(v) {
+            o.data('inviewtimer', setTimeout(function() {
+                if(t == 'top') {
+                    o.data('seenTop', true);
+                } else if(t == 'bottom') {
+                    o.data('seenBottom', true);
+                } else {
+                    o.data('seenTop', true);
+                    o.data('seenBottom', true);
+                }
+
+                if(o.data('seenTop') && o.data('seenBottom')) {
+                    o.unbind('inview');
+                    // here we will do WHAT WHE NEED (for ex. Call Ajax stats collector)
+                    // ...
+                    $('#how_2').css("visibility","visible");
+
+                }
+            }, 500));
+        }
+    });
+
+    $('#how_3').bind('inview', function(e, v, t) {
+        var o = $(this);
+
+        if(o.data('inviewtimer')) {
+            clearTimeout(o.data('inviewtimer'));
+            o.removeData('inviewtimer');
+        }
+
+        if(v) {
+            o.data('inviewtimer', setTimeout(function() {
+                if(t == 'top') {
+                    o.data('seenTop', true);
+                } else if(t == 'bottom') {
+                    o.data('seenBottom', true);
+                } else {
+                    o.data('seenTop', true);
+                    o.data('seenBottom', true);
+                }
+
+                if(o.data('seenTop') && o.data('seenBottom')) {
+                    o.unbind('inview');
+                    // here we will do WHAT WHE NEED (for ex. Call Ajax stats collector)
+                    // ...
+                    $('#how_3').css("visibility","visible");
+
+                }
+            }, 1000));
+        }
+    });
+
+    $('#how_4').bind('inview', function(e, v, t) {
+        var o = $(this);
+
+        if(o.data('inviewtimer')) {
+            clearTimeout(o.data('inviewtimer'));
+            o.removeData('inviewtimer');
+        }
+
+        if(v) {
+            o.data('inviewtimer', setTimeout(function() {
+                if(t == 'top') {
+                    o.data('seenTop', true);
+                } else if(t == 'bottom') {
+                    o.data('seenBottom', true);
+                } else {
+                    o.data('seenTop', true);
+                    o.data('seenBottom', true);
+                }
+
+                if(o.data('seenTop') && o.data('seenBottom')) {
+                    o.unbind('inview');
+                    // here we will do WHAT WHE NEED (for ex. Call Ajax stats collector)
+                    // ...
+                    $('#how_4').css("visibility","visible");
+
+                }
+            }, 1500));
+        }
+    });
+
+    $('#how_5').bind('inview', function(e, v, t) {
+        var o = $(this);
+
+        if(o.data('inviewtimer')) {
+            clearTimeout(o.data('inviewtimer'));
+            o.removeData('inviewtimer');
+        }
+
+        if(v) {
+            o.data('inviewtimer', setTimeout(function() {
+                if(t == 'top') {
+                    o.data('seenTop', true);
+                } else if(t == 'bottom') {
+                    o.data('seenBottom', true);
+                } else {
+                    o.data('seenTop', true);
+                    o.data('seenBottom', true);
+                }
+
+                if(o.data('seenTop') && o.data('seenBottom')) {
+                    o.unbind('inview');
+                    // here we will do WHAT WHE NEED (for ex. Call Ajax stats collector)
+                    // ...
+                    $('#how_5').css("visibility","visible");
+
+                }
+            }, 50));
+        }
+    });
+
+    $('#how_6').bind('inview', function(e, v, t) {
+        var o = $(this);
+
+        if(o.data('inviewtimer')) {
+            clearTimeout(o.data('inviewtimer'));
+            o.removeData('inviewtimer');
+        }
+
+        if(v) {
+            o.data('inviewtimer', setTimeout(function() {
+                if(t == 'top') {
+                    o.data('seenTop', true);
+                } else if(t == 'bottom') {
+                    o.data('seenBottom', true);
+                } else {
+                    o.data('seenTop', true);
+                    o.data('seenBottom', true);
+                }
+
+                if(o.data('seenTop') && o.data('seenBottom')) {
+                    o.unbind('inview');
+                    // here we will do WHAT WHE NEED (for ex. Call Ajax stats collector)
+                    // ...
+                    $('#how_6').css("visibility","visible");
+
+                }
+            }, 500));
+        }
+    });
+
+
+
+
+    $('#part31').bind('inview', function (event, visible, topOrBottomOrBoth) {
+        if (visible == true) {
+
+            // element is now visible in the viewport
+            if (topOrBottomOrBoth == 'top') {
+                // top part of element is visible
+
+
+            } else if (topOrBottomOrBoth == 'bottom') {
+                // bottom part of element is visible
+            } else {
+                // whole part of element is visible
+                //alert("true.. whole is visible.. now animate");
+                //$('#how_1').css("visibility","visible");
+                $('#part31').animate({
+                            width: "toggle",
+                            height: "toggle"
+                        }, {
+                            duration: 100,
+                            specialEasing: {
+                                width: "linear",
+                                height: "easeInCubic"
+                            }
+
+                        }
+                );
+
+
+                $('#part31').animate({
+                            width: "toggle",
+                            height: "toggle"
+                        }, {
+                            duration: 1000,
+                            specialEasing: {
+                                width: "linear",
+                                height: "easeInCubic"
+                            }
+
+                        }
+                );
+
+
+
+
+                //$('#how_2').animate({ "left": "-=50px" }, "slow" );
+
+            }
+        } else {
+            // element has gone out of viewport
+        }
+    });
+    function sleep(millis, callback) {
+        setTimeout(function()
+                { callback(); }
+                , millis);
+    }
+    function foobar_cont(){
+        //console.log("finished.");
+    };
+
 </script>
