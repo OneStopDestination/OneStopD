@@ -1,17 +1,13 @@
 <% if signed_in? %>
 
 
-
-
-
-
     <section style="margin-top: 80px;margin-left: 13%;margin-right: 230px;">
 
        <span class="profile_data"  style="color:white;display: inline-block;float: left;width:65%;">
 
          <%= gravatar_for @profile, 100%>
          <br> <br> <br>
-         <p style="font-size: 200%;line-height: 30px">  <strong>
+         <p style="font-size: 150%;line-height: 30px">  <strong>
          &nbsp;&nbsp;&nbsp;<%= @profile.name %>'s Profile
          </br> <br>
          &nbsp;&nbsp;&nbsp;<%= Constituency.find(id=@profile.constituency_id).name %>
@@ -24,24 +20,24 @@
          <p class="profile_subheading">
              About
          </p>
-         <p class="wrapped-text profile_subdata">
+         <p class="profile_subdata">
            <%= auto_link(raw @profile.description) %>
          </p>
-
+         <br>
          <p class="profile_subheading">
            Education
          </p>
-         <p class="wrapped-text profile_subdata">
+         <p class="profile_subdata">
            <%= raw @profile.education %>
          </p>
-
+         <br>
          <p class="profile_subheading">
            Manifesto
          </p>
-         <p class="wrapped-text profile_subdata">
+         <p class="profile_subdata">
            <%=auto_link(@profile.manifesto) %>
          </p>
-
+         <br>
          <p class="profile_subheading">
            Additional Details
          </p>
@@ -70,9 +66,12 @@
       <div class="right_content_2" id="widgetmain" style="text-align:left;overflow-y:auto;overflow-x:hidden;width:380px;background-color:#transparent; border:1px solid #333333;"><div id="rsswidget" style="height:1190px;"><iframe src="http://us1.rssfeedwidget.com/getrss.php?time=1404459163341&amp;x=https%3A%2F%2Fnews.google.com%2Fnews%2Ffeeds%3Fpz%3D1%26cf%3Dall%26ned%3Din%26hl%3Den%26topic%3Dp%26output%3Drss&amp;w=380&amp;h=1190&amp;bc=333333&amp;bw=1&amp;bgc=transparent&amp;m=20&amp;it=true&amp;t=(default)&amp;tc=333333&amp;ts=15&amp;tb=transparent&amp;il=false&amp;lc=0000FF&amp;ls=14&amp;lb=false&amp;id=true&amp;dc=333333&amp;ds=14&amp;idt=true&amp;dtc=284F2D&amp;dts=12" border="0" hspace="0" vspace="0" frameborder="no" marginwidth="0" marginheight="0" style="border:0; padding:0; margin:0; width:380px; height:1190px;" id="rssOutput">Reading RSS Feed ...</iframe></div><div style="text-align:right;margin-bottom:0;border-top:1px solid #333333;" id="widgetbottom"><span style="font-size:70%"><a href="http://www.rssfeedwidget.com">rss feed widget</a>&nbsp;</span><br></div></div>
 
       <div class="right_content_3" style="height: 135px;padding-top: 20px">
-         Problems Resolved : <br><br>
-         Problems reported : <br><br>
-         Opinion Polls  : <br><br>
+        <%@var1 = 0 %>
+        <%@var2 = 1 %>
+        <%@var3 = 0 %>
+        Problems Resolved : <%= @var1 %>  <br><br>
+         Problems reported : <%= @var2 %> <br><br>
+         Opinion Polls  : <%= @var3 %> <br><br>
        </div>
 
 

@@ -1,5 +1,6 @@
+
 <title>OneStopD</title>
-<section style="margin-top: 40px">
+<section style="margin-top: 40px;width:100%;overflow: hidden">
  <!--   <h2 style="text-align: center;font-style:oblique ; text-shadow: 2px 2px 2px #808080 ;font-family:Monospace,'Lucida Console'">Get to know your politician <br>Report problems in your constituency </h2>
     <br>
   <!-- Feedzilla Widget BEGIN -->
@@ -7,6 +8,8 @@
 </section>
 
 <% if signed_in? %>
+    <section style="width:100%;overflow: hidden">
+    <br><br><br>
     <div class="container">
 
       <div id="tabs">
@@ -30,9 +33,10 @@
 
     </div>
 
-
+</section>
 <% else %>
 
+ <section style="width:100%;overflow: hidden">
     <section class="part1">
       <div style="text-align: center">
         <%= image_tag '/assets/logo.jpg' , size: "300x400",class: "logo_center" %>
@@ -145,6 +149,7 @@
 
 
   </div>
+</section>
 <script>
     $(document).ready(function(){
         $("#tabs").tabs({heightStyle: "content"});
