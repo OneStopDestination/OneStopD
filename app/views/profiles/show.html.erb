@@ -1,22 +1,87 @@
 <% if signed_in? %>
-    <section style="margin-top: 30px;margin-left: 13%">
-      <div class="profile-content" style="margin-top: 20px ">
-       <%= gravatar_for @profile, 100%>
 
-        <p><strong>&nbsp;&nbsp;Name&nbsp;:&nbsp;</strong><%= @profile.name %>
-          <span style="font-size:0.5em;margin-left: 27%"><%= link_to "Report a Problem", "#post_form" ,:class => "btn btn-large btn-primary"  %></span>
 
-        </p>
-        <p><strong>&nbsp;&nbsp;Education&nbsp;:&nbsp;</strong><%= raw @profile.education %></p>
-        <p><strong></br>&nbsp;&nbsp;Constituency&nbsp;:&nbsp;</strong><%= Constituency.find(id=@profile.constituency_id).name %></p>
-        <p><strong></br>&nbsp;&nbsp;State&nbsp;:&nbsp;</strong><%= @profile.state %></p>
-        <p class="wrapped-text" style="width: 75%;text-align:justify;"><strong></br>&nbsp;&nbsp;About&nbsp;:&nbsp;</strong><%= auto_link(raw @profile.description) %></p>
-        <p class="wrapped-text" style="width: 75%;text-align:justify;"><strong></br>&nbsp;&nbsp;Manifesto&nbsp;:&nbsp;</strong><%=auto_link(@profile.manifesto) %></p>
-        <p class="wrapped-text" style="width: 75%;text-align:justify;"><strong></br>&nbsp;&nbsp;More details&nbsp;:&nbsp;</strong><%= auto_link( raw @profile.additional_details.html_safe) %></p>
 
+
+
+
+    <section style="margin-top: 80px;margin-left: 13%;margin-right: 230px;">
+
+       <span class="profile_data"  style="color:white;display: inline-block;float: left;width:65%;">
+
+         <%= gravatar_for @profile, 100%>
+         <br> <br> <br>
+         <p style="font-size: 200%;line-height: 30px">  <strong>
+         &nbsp;&nbsp;&nbsp;<%= @profile.name %>'s Profile
+         </br> <br>
+         &nbsp;&nbsp;&nbsp;<%= Constituency.find(id=@profile.constituency_id).name %>
+         </br> <br>
+         &nbsp;&nbsp;&nbsp;<%= @profile.state %>
+         </strong>
+         </p>
+         <br> <br> <br> <br>
+
+         <p class="profile_subheading">
+             About
+         </p>
+         <p class="wrapped-text profile_subdata">
+           <%= auto_link(raw @profile.description) %>
+         </p>
+
+         <p class="profile_subheading">
+           Education
+         </p>
+         <p class="wrapped-text profile_subdata">
+           <%= raw @profile.education %>
+         </p>
+
+         <p class="profile_subheading">
+           Manifesto
+         </p>
+         <p class="wrapped-text profile_subdata">
+           <%=auto_link(@profile.manifesto) %>
+         </p>
+
+         <p class="profile_subheading">
+           Additional Details
+         </p>
+         <p class="wrapped-text profile_subdata">
+           <%= auto_link( raw @profile.additional_details.html_safe) %>
+         </p>
+       </span>
+
+
+    <span class="right_data_profile"  style="color: black;display: inline;width:33%;float: left;margin-left: 10px;">
+
+     <div class="right_content_0" style="padding-left: 10px;padding-top: 10px">
+         <a href="#move" style="font-size: 200%;color: #ffffff;text-decoration: underline;">Report Problems</a>
+         <br> <br>
+         <a href="#move" style="font-size: 200%;color: #ffffff;text-decoration: underline;">Opinion Polls</a>
+         <br> <br>
+     </div>
+
+
+       <!--
+      <div class="right_content_1" style="height: 600px">
+        <script type="text/javascript" src="http://output14.rssinclude.com/output?type=js&amp;id=887761&amp;hash=8d4bde3c34cf5f86767127ac02e29123"></script>
       </div>
-    </section>
-      <div class="container">
+       -->
+
+      <div class="right_content_2" id="widgetmain" style="text-align:left;overflow-y:auto;overflow-x:hidden;width:380px;background-color:#transparent; border:1px solid #333333;"><div id="rsswidget" style="height:1190px;"><iframe src="http://us1.rssfeedwidget.com/getrss.php?time=1404459163341&amp;x=https%3A%2F%2Fnews.google.com%2Fnews%2Ffeeds%3Fpz%3D1%26cf%3Dall%26ned%3Din%26hl%3Den%26topic%3Dp%26output%3Drss&amp;w=380&amp;h=1190&amp;bc=333333&amp;bw=1&amp;bgc=transparent&amp;m=20&amp;it=true&amp;t=(default)&amp;tc=333333&amp;ts=15&amp;tb=transparent&amp;il=false&amp;lc=0000FF&amp;ls=14&amp;lb=false&amp;id=true&amp;dc=333333&amp;ds=14&amp;idt=true&amp;dtc=284F2D&amp;dts=12" border="0" hspace="0" vspace="0" frameborder="no" marginwidth="0" marginheight="0" style="border:0; padding:0; margin:0; width:380px; height:1190px;" id="rssOutput">Reading RSS Feed ...</iframe></div><div style="text-align:right;margin-bottom:0;border-top:1px solid #333333;" id="widgetbottom"><span style="font-size:70%"><a href="http://www.rssfeedwidget.com">rss feed widget</a>&nbsp;</span><br></div></div>
+
+      <div class="right_content_3" style="height: 135px;padding-top: 20px">
+         Problems Resolved : <br><br>
+         Problems reported : <br><br>
+         Opinion Polls  : <br><br>
+       </div>
+
+
+
+  </span>
+ </section>
+
+      <div id="move" style="height: 50px;width: 100px"> </div>
+      <div class="container" id="container">
         <div id="tabs">
           <ul>
 
@@ -44,6 +109,8 @@
         window.location.href="/signin"  // put your correct path in a string here
     </script>
 <% end %>
+
+
 
 <script>
     $(document).ready(function(){
