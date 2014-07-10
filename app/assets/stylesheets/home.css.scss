@@ -1,12 +1,7 @@
-@font-face {
-  font-family: "Armata";
-  src: url(/assets/fonts/Armata-Regular.otf) format("truetype");
-
-}
 
 @font-face {
-  font-family: "belligerent";
-  src: url(/assets/fonts/belligerent.ttf) format("truetype") ;
+  font-family: "Bilbo";
+  src: url(/assets/fonts/Bilbo-Regular.otf)  ;
 
 }
 
@@ -478,7 +473,7 @@ select{
   text-align: justify;
   line-height: 140%;
   color: #1b1b1b;
-  font-family:"belligerent"
+
 
 }
 
@@ -577,4 +572,8 @@ select{
 #how_6{
   visibility: hidden;
 
+}
+
+#home_container {
+  width : 80%
 }

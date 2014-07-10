@@ -12,6 +12,12 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
+      #require 'rss'
+      app = FbGraph::Application.new('313006152185371', :secret => '92ff4e8f10d4b31dfdc6afb6a47f7a35')
+      token = app.get_access_token
+      @posts = FbGraph::Page.new(597041733723317, :access_token =>token).posts
+      #puts posts
+
       @profile = Profile.find(params[:id])
       @problem = Profile.find(params[:id]).problems.build(params[:problem])
       @opinion = Profile.find(params[:id]).opinions.build(params[:opinion])
@@ -21,6 +27,13 @@ class ProfilesController < ApplicationController
       @problem_feed_items =  Profile.find(params[:id]).feed
       @opinion_feed_items =  Profile.find(params[:id]).opinions_feed
       puts(@problem_feed_items,"======================")
+
+      #@rss = RSS::Parser.parse(open('https://www.facebook.com/feeds/page.php?id=597041733723317&format=rss20').read, false).items[0..3]
+      #feed = Feedjira::Feed.fetch_and_parse('https://www.facebook.com/feeds/page.php?id=597041733723317&format=atom10')
+      #@rss = Feedjira::Feed.fetch_and_parse('http://feedjira.com/blog/feed.xml')
+
+      #puts("++++++++++++++++++++++++++++++++++++++++++FEEEEEEEEEEEEEEEEEEEEEED++++++++++")
+      #puts(feed.entries )
 
   end
 

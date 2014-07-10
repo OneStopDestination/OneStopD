@@ -63,15 +63,40 @@
       </div>
        -->
 
-      <div class="right_content_2" id="widgetmain" style="text-align:left;overflow-y:auto;overflow-x:hidden;width:380px;background-color:#transparent; border:1px solid #333333;"><div id="rsswidget" style="height:1190px;"><iframe src="http://us1.rssfeedwidget.com/getrss.php?time=1404459163341&amp;x=https%3A%2F%2Fnews.google.com%2Fnews%2Ffeeds%3Fpz%3D1%26cf%3Dall%26ned%3Din%26hl%3Den%26topic%3Dp%26output%3Drss&amp;w=380&amp;h=1190&amp;bc=333333&amp;bw=1&amp;bgc=transparent&amp;m=20&amp;it=true&amp;t=(default)&amp;tc=333333&amp;ts=15&amp;tb=transparent&amp;il=false&amp;lc=0000FF&amp;ls=14&amp;lb=false&amp;id=true&amp;dc=333333&amp;ds=14&amp;idt=true&amp;dtc=284F2D&amp;dts=12" border="0" hspace="0" vspace="0" frameborder="no" marginwidth="0" marginheight="0" style="border:0; padding:0; margin:0; width:380px; height:1190px;" id="rssOutput">Reading RSS Feed ...</iframe></div><div style="text-align:right;margin-bottom:0;border-top:1px solid #333333;" id="widgetbottom"><span style="font-size:70%"><a href="http://www.rssfeedwidget.com">rss feed widget</a>&nbsp;</span><br></div></div>
+      <div class="right_content_2" style="height: 1205px;overflow-y: scroll" >
 
-      <div class="right_content_3" style="height: 135px;padding-top: 20px">
+       <!--    id="widgetmain" style="text-align:left;overflow-y:auto;overflow-x:hidden;width:380px;background-color:#transparent; border:1px solid #333333;"><div id="rsswidget" style="height:1190px;"><iframe src="http://us1.rssfeedwidget.com/getrss.php?time=1404459163341&amp;x=https%3A%2F%2Fnews.google.com%2Fnews%2Ffeeds%3Fpz%3D1%26cf%3Dall%26ned%3Din%26hl%3Den%26topic%3Dp%26output%3Drss&amp;w=380&amp;h=1190&amp;bc=333333&amp;bw=1&amp;bgc=transparent&amp;m=20&amp;it=true&amp;t=(default)&amp;tc=333333&amp;ts=15&amp;tb=transparent&amp;il=false&amp;lc=0000FF&amp;ls=14&amp;lb=false&amp;id=true&amp;dc=333333&amp;ds=14&amp;idt=true&amp;dtc=284F2D&amp;dts=12" border="0" hspace="0" vspace="0" frameborder="no" marginwidth="0" marginheight="0" style="border:0; padding:0; margin:0; width:380px; height:1190px;" id="rssOutput">Reading RSS Feed ...</iframe></div><div style="text-align:right;margin-bottom:0;border-top:1px solid #333333;" id="widgetbottom"><span style="font-size:70%"><a href="http://www.rssfeedwidget.com">rss feed widget</a>&nbsp;</span><br></div>
+        -->
+
+      <% @posts.each do |post| %>
+        <div id="fb_feeds">
+        <span style="display: inline;width: 30%;float: left">
+          <%=link_to ( image_tag  post.picture , size: "95x75"),post.link %>
+        </span>
+        <span style="display: inline;width: 65%;float: left">
+          <%= auto_link(raw post.message) %>  <br>
+          <%= auto_link(raw post.description) %> <br>
+          <p style="color: white"> <%=  Time.parse(post.created_time.to_s)  %> </p>
+          <br><br>
+        </span>
+
+        </div>
+         <br>
+
+
+      <% end %>
+      </div>
+
+      <div class="right_content_3" style="height: 135px;padding-top: 20px;overflow-y: scroll">
         <%@var1 = 0 %>
         <%@var2 = 1 %>
         <%@var3 = 0 %>
         Problems Resolved : <%= @var1 %>  <br><br>
          Problems reported : <%= @var2 %> <br><br>
          Opinion Polls  : <%= @var3 %> <br><br>
+
+
+
        </div>
 
 
