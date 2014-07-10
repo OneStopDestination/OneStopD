@@ -18,6 +18,14 @@ pre {
   font-size: 11px;
 }
 
+a {
+  color: darkblue; }
+a:visited {
+  color: #491380
+}
+a:hover {
+  text-underline-position: below;
+}
 div {
   &.field, &.actions {
     margin-bottom: 10px;

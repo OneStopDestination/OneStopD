@@ -1,9 +1,9 @@
 <% if signed_in? %>
 
 
-    <section style="margin-top: 80px;margin-left: 13%;margin-right: 230px;">
+    <section style="margin-top: 80px;margin-left: 9%;margin-right: 9%;">
 
-       <span class="profile_data"  style="color:white;display: inline-block;float: left;width:65%;">
+       <span class="profile_data"  style="color:white;display: inline-block;float: left;width:62%;">
 
          <%= gravatar_for @profile, 100%>
          <br> <br> <br>
@@ -47,7 +47,7 @@
        </span>
 
 
-    <span class="right_data_profile"  style="color: black;display: inline;width:33%;float: left;margin-left: 10px;">
+    <span class="right_data_profile"  style="color: black;display: inline;width:35%;float: left;margin-left: 10px;">
 
      <div class="right_content_0" style="padding-left: 10px;padding-top: 10px">
          <a href="#move" style="font-size: 200%;color: #ffffff;text-decoration: underline;">Report Problems</a>
@@ -71,23 +71,30 @@
       <% @posts.each do |post| %>
         <div id="fb_feeds">
         <span style="display: inline;width: 30%;float: left">
-          <%=link_to ( image_tag  post.picture , size: "95x75"),post.link %>
+          <%=link_to ( image_tag  post.picture , size: "100x95"),post.link %>
         </span>
         <span style="display: inline;width: 65%;float: left">
           <%= auto_link(raw post.message) %>  <br>
           <%= auto_link(raw post.description) %> <br>
-          <p style="color: white"> <%=  Time.parse(post.created_time.to_s)  %> </p>
-          <br><br>
-        </span>
+          <p style="color: white"> <%= Time.at(post.created_time.to_i).strftime("%B %e, %Y at %I:%M %p")  %> </p>
+          <% prefix =  post.from.link %>
+          <% suffix =  post.identifier %>
 
-        </div>
-         <br>
+          <% url = prefix + "/posts/" + suffix.split("_").last %>
+
+
+        </span>
+          <div class="fb-like" data-href=<%= url%> data-layout="standard" data-action="like" data-show-faces="false" data-share="true"></div>
+
+
+            </div>
+         <br> <br>
 
 
       <% end %>
       </div>
 
-      <div class="right_content_3" style="height: 135px;padding-top: 20px;overflow-y: scroll">
+      <div class="right_content_3" style="height: 135px;padding-top: 20px;overflow-y: hidden">
         <%@var1 = 0 %>
         <%@var2 = 1 %>
         <%@var3 = 0 %>
@@ -105,6 +112,7 @@
  </section>
 
       <div id="move" style="height: 50px;width: 100px"> </div>
+    <section style="margin-left: 9%;margin-right: 10%;">
       <div class="container" id="container">
         <div id="tabs">
           <ul>
@@ -124,6 +132,7 @@
 
         </div>
       </div>
+      </section>
     <% if current_user.email == "nationsevoice.acct@gmail.com" %>
     <%= link_to 'Edit', edit_profile_path(@profile) %> |
     <%= link_to 'Back', profiles_path %>
@@ -153,9 +162,18 @@
             }
 
         });
-
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=313006152185371&version=v2.0";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
 
     });
+
+
+
 </script>
 
 
