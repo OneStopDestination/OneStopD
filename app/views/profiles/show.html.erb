@@ -69,6 +69,9 @@
         -->
 
       <% @posts.each do |post| %>
+        <% if post.message.blank? && post.description.blank? %>
+
+        <% else %>
         <div id="fb_feeds">
         <span style="display: inline;width: 30%;float: left">
           <%=link_to ( image_tag  post.picture , size: "100x95"),post.link %>
@@ -89,7 +92,7 @@
 
             </div>
          <br> <br>
-
+        <% end %>
 
       <% end %>
       </div>

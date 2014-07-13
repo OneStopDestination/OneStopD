@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
-
+   require 'fb_controller'
   # GET /profiles
   # GET /profiles.json
   def index
@@ -12,13 +12,17 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
-      #require 'rss'
+      @profile = Profile.find(params[:id])
       app = FbGraph::Application.new('313006152185371', :secret => '92ff4e8f10d4b31dfdc6afb6a47f7a35')
       token = app.get_access_token
-      @posts = FbGraph::Page.new(597041733723317, :access_token =>token).posts
+      page_id = @profile.fbpage_id
+
+      if page_id.blank?
+        page_id =  597041733723317
+      end
+      @posts = FbGraph::Page.new(page_id, :access_token =>token).posts
       #puts posts
 
-      @profile = Profile.find(params[:id])
       @problem = Profile.find(params[:id]).problems.build(params[:problem])
       @opinion = Profile.find(params[:id]).opinions.build(params[:opinion])
       @opinionpoll = Opinionpoll.new(:constituency_id => @profile.constituency_id)
@@ -93,6 +97,6 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:name, :education, :description, :manifesto, :pid, :user_id, :constituency_id ,:additional_details,:state,)
+      params.require(:profile).permit(:name, :education, :description, :manifesto, :pid, :user_id, :constituency_id ,:additional_details,:state,:fbpage_id)
     end
 end
