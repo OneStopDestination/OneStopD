@@ -26,8 +26,10 @@ class ProblemsController < ApplicationController
   # POST /problems.json
   def create
     @problem = Problem.new(problem_params)
+    @politician = User.find_by_email(Profile.find_by_constituency_id(@problem.cid).user_id)
     respond_to do |format|
       if @problem.save
+        UserMailer.problem_notification(@politician).deliver
         format.html   {
           flash[:success] = "Problem created!"
           redirect_back_or(root_url)

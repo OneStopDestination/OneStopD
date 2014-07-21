@@ -11,4 +11,9 @@ class UserMailer < ActionMailer::Base
     mail :to => user.email, :subject => "Password Reset"
   end
 
+  def problem_notification(user)
+    @user = user
+    mail :to => user.email, :subject => "New problem reported"
+  end
+
 end
