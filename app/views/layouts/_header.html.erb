@@ -11,6 +11,7 @@
            if loggedin %>
             <div role="search">
               <input type="text" id="post_user_name" class="search-input" placeholder="Search By politician"> </input>
+              <input type="hidden" id="search_user_link">
             </div>
         <% end %>
         <ul class="nav right-actions">
@@ -33,7 +34,7 @@
               <li>
                 <%= link_to "Sign in", signin_path %>
               </li>
-              <li><%= link_to "Facebook Login", fblogin_path %></li>
+              <li><%= link_to "Facebook Login", fblogin_path  %></li>
           <% end %>
         </ul>
       </div>
